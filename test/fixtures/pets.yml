@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet_name: MyString
+  birthday: MyString
+  breed: MyString
+  microchip: MyString
+  user: one
+
+two:
+  pet_name: MyString
+  birthday: MyString
+  breed: MyString
+  microchip: MyString
+  user: two
