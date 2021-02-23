@@ -1,20 +1,20 @@
-# # This file should contain all the record creation needed to seed the database with its default values.
-# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-# #
-# # Examples:
-# #
-# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-# #   Character.create(name: 'Luke', movie: movies.first)
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
 
-# require "open-uri"
-# puts "cleaning up database"
-# # Item.destroy_all
-# User.destroy_all
-# # Category.destroy_all
-# puts "database is clean"
+require "open-uri"
+puts "cleaning up database"
+# Item.destroy_all
+User.destroy_all
+# Category.destroy_all
+puts "database is clean"
 
-# puts 'Creating 15 user...'
-# user_1 = User.create!(email: "user@user.com", password: 111111)
+puts 'Creating 15 user...'
+user_1 = User.create!(first_name: "test", last_name: "tester", email: "user@user.com", password: 111111)
 # user_2 = User.create!(email: "paal@user.com", password: 222222)
 # user_3 = User.create!(email: "aparna@user.com", password: 333333)
 # user_4 = User.create!(email: "diego@user.com", password: 444444)
@@ -29,13 +29,13 @@
 # user_13 = User.create!(email: "thirteen@user.com", password: 333333)
 # user_14 = User.create!(email: "fourteen@user.com", password: 444444)
 # user_15 = User.create!(email: "fifteen@user.com", password: 555555)
-# puts "#{User.count} User created..."
+puts "#{User.count} User created..."
 
-# puts 'Creating 15 items...'
+puts 'Creating 15 items...'
 
-# item_1 = Item.create(name: 'Summer Splash', price: rand(30..100), description: "Phasellus  pretium mauris erat, at egestas massa accumsan vel.", size: "XS", user_id: user_1.id )
-# file = URI.open('https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
-# item_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
+pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990' , breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
+file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80')
+pet_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
 
 # item_2 = Item.create(name: 'Tulum', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "S", user_id: user_2.id )
 # file = URI.open('https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
@@ -104,4 +104,4 @@
 #   Category.create(name: category[0], image: category[1])
 #   end
 
-# puts 'Finished!'
+puts 'Finished!'

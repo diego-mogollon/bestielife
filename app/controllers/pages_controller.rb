@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @pet = Pet.where(user_id: current_user.id)
   end
 end
