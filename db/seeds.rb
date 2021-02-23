@@ -33,14 +33,9 @@ puts "#{User.count} User created..."
 
 puts 'Creating 15 items...'
 
-= f.input :dob,
-  start_year: Time.now.year - 100,
-  end_year: Time.now.year - 18,
-  order: %i(day month year)
-
-pet_1 = Pet.create(pet_name: 'Sundae', birthday: , description: "Phasellus  pretium mauris erat, at egestas massa accumsan vel.", size: "XS", user_id: user_1.id )
-file = URI.open('https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
-item_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
+pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990' , breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
+file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80')
+pet_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
 
 # item_2 = Item.create(name: 'Tulum', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "S", user_id: user_2.id )
 # file = URI.open('https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
