@@ -1,0 +1,15 @@
+
+
+<%= week_calendar(number_of_weeks: 1) do |date| %>
+    <%= date %>
+    <% end %>
+    
+    <% @events.each do |event| %>
+        <div>
+        <%= event.name %>
+        <%= event.start_time %>
+        <%= event.end_time %>
+        </div>
+        <% end %>
+        
+        
