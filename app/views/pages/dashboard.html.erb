@@ -1,3 +1,26 @@
-<%= link_to 'logout', destroy_user_session_path, method: :delete %>
-<h1><%= @pet.pet_name %></h1>
-<%= image_tag url_for(@pet.photo) %>
+<div class="row header">
+    <div class="container m-3">
+        <div class="row">
+            <div class="col-2"><%= image_tag('paw-logo.svg', class: 'paw-logo') %></div>
+            <div class="col-3 ml-auto">bestielife</div>
+        </div>
+        <div class="row rounded-circle">
+            <div class="col-4 mx-auto">
+                <%= image_tag url_for(@pet.photo), class: 'profile-pic rounded-circle' %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mx-auto">
+                <h3><%= @pet.pet_name %></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row dashboard">
+    <% @dashboard_categories.each do |category| %>
+    <div class="col-6">
+        <%= render 'components/dashboard-card', category_title: category.name, category_url: category.url %>
+    </div>
+    <% end %>
+</div>
+<%#= link_to 'logout', destroy_user_session_path, method: :delete %>

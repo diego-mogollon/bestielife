@@ -1,0 +1,2 @@
+class DashboardCategory < ApplicationRecord
+end

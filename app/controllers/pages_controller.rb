@@ -5,5 +5,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @pet = Pet.find_by(user_id: current_user.id)
+    @dashboard_categories = DashboardCategory.all
   end
 end
