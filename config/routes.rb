@@ -5,6 +5,5 @@ Rails.application.routes.draw do
     root to: 'pages#dashboard', as: :authenticated_root
   end
   root to: 'pages#home'
+  get 'calendar', to: 'pages#calendar'
 end
-
-

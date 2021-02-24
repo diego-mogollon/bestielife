@@ -7,4 +7,8 @@ class PagesController < ApplicationController
     @pet = Pet.find_by(user_id: current_user.id)
     @dashboard_categories = DashboardCategory.all
   end
+  
+  def calendar
+
+  end
 end
