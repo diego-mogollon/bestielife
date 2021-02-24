@@ -44,6 +44,10 @@ DashboardCategory.create!(name: "Notes", url: "notes.svg")
 DashboardCategory.create!(name: "Explore", url: "map.svg")
 DashboardCategory.create!(name: "Photos", url: "gallery.svg")
 DashboardCategory.create!(name: "Friends", url: "pet-house.svg")
+
+Event.create(pet_id: pet_1.id, name: "Vet", description: "Appointment", start_time: "2021-02-24 04:57", end_time: "2021-02-24 06:57")
+
+
 # item_2 = Item.create(name: 'Tulum', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "S", user_id: user_2.id )
 # file = URI.open('https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
 # item_2.photo.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')

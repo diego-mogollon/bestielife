@@ -7,8 +7,11 @@ class PagesController < ApplicationController
     @pet = Pet.find_by(user_id: current_user.id)
     @dashboard_categories = DashboardCategory.all
   end
-  
-  def calendar
 
+  def calendar
+    # @events = Event.all
+
+      # Scope your query to the dates being shown:
+      @events = Event.where(start_time: Date.today.beginning_of_week..Date.today.end_of_week)
   end
 end
