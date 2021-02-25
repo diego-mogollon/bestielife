@@ -1,0 +1,49 @@
+.signup-container {
+  //   background-image: asset-url('signup-background.jpg');
+  //   background-size: cover;
+}
+.form-control {
+  padding-left: 20px;
+  border-radius: $font-size-base * 2;
+}
+
+.remember-links {
+  & > a {
+    font-size: $font-size-base * 0.8;
+    padding-top: $font-size-base * 0.2;
+  }
+}
+
+.form-check label {
+  font-size: $font-size-base * 0.8;
+}
+.form-icons {
+  position: relative;
+  input {
+    text-indent: 30px;
+  }
+  .fa-user,
+  .fa-envelope,
+  .fa-lock {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    margin-right: 15px;
+    font-size: 15px;
+    color: grey;
+  }
+  .fa-comments {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 15px;
+    color: grey;
+  }
+  .fa-sign-in {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 18px;
+    color: white;
+  }
+}
