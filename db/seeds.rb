@@ -51,26 +51,43 @@ puts 'Creating 10 friends...'
 
 friend_1 = Friend.create(name: 'Douglas', pet_id: pet_1.id)
 file = URI.open ('https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+friend_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
 
-friend_2 = Friend.create(name:'Wally', pet_id: pet_2.id)
+friend_2 = Friend.create(name:'Wally', pet_id: pet_1.id)
 file = URI.open ('https://images.unsplash.com/photo-1570566998157-0df9e6f8d5f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
+friend_2.photo.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')
 
-friend_3 = Friend.create(name: 'Margot', pet_id: pet_3.id )
+friend_3 = Friend.create(name: 'Margot', pet_id: pet_1.id )
 file = URI.open ('https://images.unsplash.com/photo-1543490258-4131d44881d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=734&q=80')
-friend_4 = Friend.create(name: 'Arthur', pet_id: pet_4.id)
+friend_3.photo.attach(io: file, filename: 'photo3.jpg', content_type: 'image/jpg')
+
+friend_4 = Friend.create(name: 'Arthur', pet_id: pet_1.id)
 file = URI.open('https://images.unsplash.com/photo-1576525773377-c77530178f6a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80')
-friend_5 = Friend.create(name: 'Molly', pet_id: pet_5.id )
+friend_4.photo.attach(io: file, filename: 'photo4.jpg', content_type: 'image/jpg')
+
+friend_5 = Friend.create(name: 'Molly', pet_id: pet_1.id )
 file = URI.open('https://images.unsplash.com/photo-1577767650197-e3c45dad02dc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTR8fGRvZ3N8ZW58MHwxfDB8&auto=format&fit=crop&w=800&q=60')
-friend_6 = Friend.create(name: 'Trixie', pet_id: pet_6.id )
+friend_5.photo.attach(io: file, filename: 'photo5.jpg', content_type: 'image/jpg')
+
+friend_6 = Friend.create(name: 'Trixie', pet_id: pet_1.id )
 file = URI.open('https://images.unsplash.com/photo-1591608971358-f93643d11763?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTI3fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
-friend_7 = Friend.create(name: 'Marmaduke', pet_id: pet_7.id)
+friend_6.photo.attach(io: file, filename: 'photo6.jpg', content_type: 'image/jpg')
+
+friend_7 = Friend.create(name: 'Marmaduke', pet_id: pet_1.id)
 file = URI.open('https://images.unsplash.com/photo-1588095210434-3a062445f093?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80')
-friend_8 = Friend.create(name: 'Snowy', pet_id: pet_8.id)
+friend_7.photo.attach(io: file, filename: 'photo7.jpg', content_type: 'image/jpg')
+
+friend_8 = Friend.create(name: 'Snowy', pet_id: pet_1.id)
 file = URI.open('https://images.unsplash.com/photo-1581434293783-79abdca76f3d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTU4fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
-friend_9 = Friend.create(name: 'Buddy', pet_id: pet_9.id)
+friend_8.photo.attach(io: file, filename: 'photo8.jpg', content_type: 'image/jpg')
+
+friend_9 = Friend.create(name: 'Buddy', pet_id: pet_1.id)
 file = URI.open('https://images.unsplash.com/photo-1601245381370-4056f3f47526?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80')
-friend_10 = Friend.create(name: 'Poppy', pet_id: pet_10.id)
+friend_9.photo.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg')
+
+friend_10 = Friend.create(name: 'Poppy', pet_id: pet_1.id)
 file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+friend_10.photo.attach(io: file, filename: 'photo10.jpg', content_type: 'image/jpg')
 # item_2 = Item.create(name: 'Tulum', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "S", user_id: user_2.id )
 # file = URI.open('https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
 # item_2.photo.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')
@@ -113,7 +130,7 @@ file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ix
 
 # item_12 = Item.create(name: 'Stormy Thunder', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "XXL", user_id: user_12.id )
 # file = URI.open('https://images.unsplash.com/photo-1603633247906-4746fea3141a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
-# item_12.photo.attach(io: file, filename: 'photo12.jpg', content_type: 'image/jpg')
+
 
 # item_13 = Item.create(name: 'Chanel', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "XXL", user_id: user_13.id )
 # file = URI.open('https://images.unsplash.com/photo-1599593589368-d88e60c5fec5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1263&q=80')
