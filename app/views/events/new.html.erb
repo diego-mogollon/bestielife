@@ -1,0 +1,7 @@
+<h1> New event </h1>
+<div class="col-6 offset-3 mt-5">
+    <%= simple_form_for(@event) do |f| %>
+    <%= f.association :category, input_html: { multiple: true, class: "multiple-select" }, include_hidden: false %>
+    <%= f.button :submit, "Add Category", class: "button" %>
+    <% end %>
+</div>
