@@ -16,9 +16,9 @@
         </div>
     </div>
 </div>
-<div class="row dashboard">
+<div class="row dashboard ml-2 mt-2">
     <% @dashboard_categories.each do |category| %>
-    <div class="col-6">
+    <div class="col-6 my-2">
         <%= render 'components/dashboard-card', category_title: category.name, category_url: category.url %>
     </div>
     <% end %>
