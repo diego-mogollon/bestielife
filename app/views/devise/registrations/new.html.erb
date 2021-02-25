@@ -64,10 +64,10 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
         </div>
+        <div class="form-actions ml-4 mb-3">
+            <%= f.button :submit, "Sign up", class: "button-lg primary-blue my-3" %>
+            <%= render "devise/shared/links" %>
+        </div>
+        <% end %>
     </div>
-    <div class="form-actions ml-4 mb-3">
-        <%= f.button :submit, "Sign up", class: "button-lg primary-blue my-3" %>
-        <%= render "devise/shared/links" %>
-    </div>
-    <% end %>
 </div>
