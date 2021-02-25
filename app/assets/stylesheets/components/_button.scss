@@ -1,0 +1,16 @@
+.button-lg {
+  width: $font-size-base * 15;
+  padding: 0.8rem 0;
+  color: $white;
+  border: none;
+  outline: none;
+  &.primary-blue {
+    background-color: $primary-blue;
+  }
+  &.primary-green {
+    background-color: $primary-green;
+  }
+  & > a {
+    color: $white;
+  }
+}
