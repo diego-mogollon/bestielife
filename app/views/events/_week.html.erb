@@ -1,5 +1,5 @@
-
-
+<h1> WEEK </h1>
+<%= link_to "month", events_path(month:true)%>
 <%= week_calendar(number_of_weeks: 1) do |date| %>
     <%= date %>
     <% end %>
@@ -11,6 +11,5 @@
         <%= event.start_time %>
         <%= event.end_time %>
         </div>
-        <% end %>
-        
+        <% end %>     
         

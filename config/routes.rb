@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   root to: 'pages#home'
   get 'calendar', to: 'pages#calendar'
+  resources :events
 end

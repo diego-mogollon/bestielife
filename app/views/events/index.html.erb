@@ -1,0 +1,6 @@
+<h1> Calendar </h1>
+<% if params[:month] %>
+<%= render "month" %>
+<% else %>
+<%= render "week" %>
+<% end %>
