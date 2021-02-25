@@ -34,7 +34,7 @@ puts "#{User.count} User created..."
 
 puts 'Creating 15 items...'
 
-pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990' , breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
+pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990', breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
 file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80')
 pet_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
 
@@ -46,6 +46,7 @@ DashboardCategory.create!(name: "Photos", url: "gallery.svg")
 DashboardCategory.create!(name: "Friends", url: "pet-house.svg")
 
 Event.create(pet_id: pet_1.id, name: "Vet", description: "Appointment", start_time: "2021-02-24 04:57", end_time: "2021-02-24 06:57")
+
 
 puts 'Creating 10 friends...'
 
@@ -88,6 +89,32 @@ friend_9.photo.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg
 friend_10 = Friend.create(name: 'Poppy', pet_id: pet_1.id)
 file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
 friend_10.photo.attach(io: file, filename: 'photo10.jpg', content_type: 'image/jpg')
+
+#As user, I can see my friend's photos
+
+puts "Creating pet profile"
+
+pet_1 = Pet.create(name: 'Buddy', pet_id: pet_1.id)
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo3.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo4.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo5.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo6.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo7.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo8.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591116302387-58db066ced5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjc5fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
+pet_1.photo.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg')
+
+
 # item_2 = Item.create(name: 'Tulum', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "S", user_id: user_2.id )
 # file = URI.open('https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
 # item_2.photo.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')
