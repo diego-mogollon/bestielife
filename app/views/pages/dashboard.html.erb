@@ -2,7 +2,7 @@
     <div class="container m-3">
         <div class="row">
             <div class="col-2"><%= image_tag('paw-logo.svg', class: 'paw-logo') %></div>
-            <div class="col-3 ml-auto">bestielife</div>
+            <%= render 'components/hamburger-menu' %>
         </div>
         <div class="row rounded-circle">
             <div class="col-4 mx-auto">
@@ -16,11 +16,10 @@
         </div>
     </div>
 </div>
-<div class="row dashboard">
+<div class="row dashboard ml-2 mt-2">
     <% @dashboard_categories.each do |category| %>
-    <div class="col-6">
+    <div class="col-6 my-2">
         <%= render 'components/dashboard-card', category_title: category.name, category_url: category.url %>
     </div>
     <% end %>
 </div>
-<%= link_to 'logout', destroy_user_session_path, method: :delete %>
