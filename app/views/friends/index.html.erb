@@ -1,16 +1,24 @@
 <h1>All my pets friends</h1>
 <h3> Friend Requests:</h3>
-<% if @user.friend_requests? %>
-<% @requests.each do |friend| %>
-    <%= friend.pet.pet_name%>
-    <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
+    <% if @user.friend_requests? %>
+        <% @requests.each do |friend| %>
+        <%= friend.pet.pet_name%>
+        <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
         <input type=submit value='Yes, be my bestie!'>
         <% end %>
         <%= form_tag ({controller: 'friends', action: 'reject', method: 'post', id: friend.id}) do %>
             <input type=submit value='Nope, soz!'>
             <% end %>
-    <% end %>
+        <% end %>
     
-       <% else %>
-            <h4>Woof, nothing to see here</h4>
-            <% end %>
+    <% else %>
+        <h6>Woof, nothing to see here</h6>
+    <% end %>
+<h3> Pending:</h3>
+    <% if @user.requested_friends? %>
+        <% @pending.each do |friend| %>
+        <%= friend.name%>
+        <% end %>
+    <% else %>
+        <h6>Nothing, nada, zilt</h6>
+    <% end %>
