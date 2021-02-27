@@ -1,0 +1,9 @@
+<h1> This is photos </h1>
+<%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
+    <%= f.input :photo, as: :file  %> 
+    <%= f.submit %> 
+<% end %>
+<% @pet.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, width: 100 %>
+    <%= link_to "See picture", photo_path(photo.id) %>
+    <% end %>
