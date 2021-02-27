@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  pet: one
+  expense_type: one
+
+two:
+  amount: 1
+  pet: two
+  expense_type: two

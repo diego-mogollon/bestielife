@@ -7,4 +7,14 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'calendar', to: 'pages#calendar'
   resources :events
+  resources :expenses do  
+   resources :expense_types
+  end
+  resources :budgets do  
+    resources :expense_types
+   end
+  resources :places, only: [:index, :show] do
+    resources :favourite_places, except: [:edit, :update]
+  end
+  resources :photos
 end
