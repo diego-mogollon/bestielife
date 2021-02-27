@@ -36,7 +36,7 @@ puts 'Creating 15 items...'
 
 pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990', breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
 file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80')
-pet_1.photo.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
+pet_1.photos.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
 
 DashboardCategory.create!(name: "Calendar", url: "calendar.svg")
 DashboardCategory.create!(name: "Expenses", url: "piggy-bank.svg")
