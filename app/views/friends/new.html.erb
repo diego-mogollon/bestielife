@@ -1,4 +1,6 @@
 <h1> Add a friend </h1>
 <% Pet.all.each do |pet| %>
+    <% if pet.pet_name != current_user.pet.pet_name %>
     <%= link_to pet.pet_name, add_friend_path(pet), method: :post %>
+<% end %>
 <% end %>
