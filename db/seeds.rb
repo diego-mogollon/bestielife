@@ -16,7 +16,11 @@ puts "database is clean"
 
 puts 'Creating 15 user...'
 user_1 = User.create!(first_name: "test", last_name: "tester", email: "user@user.com", password: 111111)
-# user_2 = User.create!(email: "paal@user.com", password: 222222)
+user_2 = User.create!(first_name: "test2", last_name: "tester2", email: "user2@user.com", password: 222222)
+user_3 = User.create!(first_name: "test3", last_name: "tester3", email: "user3@user.com", password: 333333)
+user_4 = User.create!(first_name: "test4", last_name: "tester4", email: "user4@user.com", password: 444444)
+user_5 = User.create!(first_name: "tes5", last_name: "tester5", email: "use5@user.com", password: 555555)
+user_6 = User.create!(first_name: "test6", last_name: "tester6", email: "user6@user.com", password: 666666)
 # user_3 = User.create!(email: "aparna@user.com", password: 333333)
 # user_4 = User.create!(email: "diego@user.com", password: 444444)
 # user_5 = User.create!(email: "cheena@user.com", password: 555555)
@@ -37,6 +41,26 @@ puts 'Creating 15 items...'
 pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990', breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
 file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80')
 pet_1.photos.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
+
+pet_2 = Pet.create(pet_name: 'Yoshi', birthday: '07/07/1990', breed: "Boxer", microchip: "123456", user_id: user_2.id )
+file = URI.open('https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+pet_2.photos.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')
+
+pet_3 = Pet.create(pet_name: 'Arlo', birthday: '07/07/1990', breed: "Boxer", microchip: "123456", user_id: user_3.id )
+file = URI.open('https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+pet_3.photos.attach(io: file, filename: 'photo3.jpg', content_type: 'image/jpg')
+
+pet_4 = Pet.create(pet_name: 'Chef', birthday: '07/07/1990', breed: "Boxer", microchip: "123456", user_id: user_4.id )
+file = URI.open('https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+pet_4.photos.attach(io: file, filename: 'photo4.jpg', content_type: 'image/jpg')
+
+pet_5 = Pet.create(pet_name: 'Chilli', birthday: '07/07/1990', breed: "Boxer", microchip: "123456", user_id: user_5.id )
+file = URI.open('https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+pet_5.photos.attach(io: file, filename: 'photo5.jpg', content_type: 'image/jpg')
+
+pet_6 = Pet.create(pet_name: 'Azlan', birthday: '07/07/1990', breed: "Boxer", microchip: "123456", user_id: user_6.id )
+file = URI.open('https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+pet_6.photos.attach(io: file, filename: 'photo6.jpg', content_type: 'image/jpg')
 
 DashboardCategory.create!(name: "Calendar", url: "calendar.svg")
 DashboardCategory.create!(name: "Expenses", url: "piggy-bank.svg")
