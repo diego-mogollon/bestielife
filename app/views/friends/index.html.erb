@@ -22,3 +22,8 @@
     <% else %>
         <h6>Nothing, nada, zilt</h6>
     <% end %>
+
+<h3> Your Friends:</h3>
+    <% @friends.each do |friend| %>
+        <%= link_to  friend.pet.pet_name, photos_show_path(friend) %>
+        <% end %>

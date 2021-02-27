@@ -49,4 +49,3 @@ class FriendsController < ApplicationController
         
     end
 end
-    
