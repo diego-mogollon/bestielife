@@ -1,0 +1,4 @@
+<h1> Add a friend </h1>
+<% Pet.all.each do |pet| %>
+    <%= link_to pet.pet_name, add_friend_path(pet), method: :post %>
+<% end %>

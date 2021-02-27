@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       delete :remove_picture
     end
   end
+  post '/pets/:id', to: 'friends#add_friend', as: 'add_friend'
+  resources :friends, only: [:new, :index]
   get 'calendar', to: 'pages#calendar'
   resources :events
   resources :expenses do  
