@@ -2,6 +2,10 @@ class PetsController < ApplicationController
     def show
         @pet = Pet.find(params[:id])
     end
+    def new
+    end
+    def create
+    end
     def add_picture
         @pet = Pet.find(params[:id])
         @pet.photos.attach(io: params[:pet][:photo], filename: "#{@pet.id}_picture", content_type: 'image/png')

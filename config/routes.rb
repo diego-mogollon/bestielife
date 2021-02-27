@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   get 'photos/show'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   authenticated :user do
     root to: 'pages#dashboard', as: :authenticated_root
   end
   root to: 'pages#home'
-  resources :pets do 
+  resources :pets, only: [:new, :create] do 
     member do
       post :add_picture
       delete :remove_picture
