@@ -12,6 +12,9 @@
 .fa-bars,
 .fa-bars:focus {
   color: $white;
+  &.page-header {
+    color: $primary-blue;
+  }
 }
 .dropdown-links {
   color: $black;

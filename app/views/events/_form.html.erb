@@ -1,0 +1,9 @@
+<div class="col-6 offset-3 mt-5">
+    <%= simple_form_for(event) do |f| %>
+    <%= f.input :name, as: :string, required: true%>
+    <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 10 } %>
+    <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.button :submit, "Update Event", class: "button" %>
+    <% end %>
+</div>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg ml-auto">
     <ul class="navbar-nav align-self-end">
         <li class="nav-item dropdown d-flex flex-column">
-            <a class="nav-link fas fa-bars ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+            <a class="nav-link fas fa-bars ml-auto <%= dashboard ? '' : 'page-header' %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-links" %>
             </div>
