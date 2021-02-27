@@ -17,13 +17,27 @@
 <h3> Pending:</h3>
     <% if @user.requested_friends? %>
         <% @pending.each do |friend| %>
-        <%= friend.name%>
+        <%= friend.pet.pet_name %>
         <% end %>
     <% else %>
         <h6>Nothing, nada, zilt</h6>
     <% end %>
 
 <h3> Your Friends:</h3>
-    <% @friends.each do |friend| %>
+    <% if @user.friends? %>
+        <% @friends.each do |friend| %>
         <%= link_to  friend.pet.pet_name, photos_show_path(friend) %>
         <% end %>
+    <% else %>
+        <h6>You have 0 Besties, go find some!</h6>
+    <% end %>
+
+<h3>Find Friends</h3>
+    <% Pet.all.each do |pet| %>
+        <% if pet.pet_name != current_user.pet.pet_name %>
+        <%= link_to pet.pet_name, search_friend_path(pet), method: :post %>
+    <% end %>
+    <% end %>
+
+
+

@@ -38,11 +38,10 @@ class FriendsController < ApplicationController
         redirect_to user_path(friend)
     end
 
-    def search
-        @search = params[:search].downcase
-        @results = User.all.select do |user|
-            user.name.downcase.include?(@search)
-        end
+    def search_friend
+        @pet = Pet.find(params[:id])
+        current_user.friend_request(@pet.user)
+        redirect_to friends_path  
     end
 
     def show
