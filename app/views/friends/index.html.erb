@@ -36,7 +36,7 @@
 <% Pet.all.each do |pet| %>
 <% if pet.user.not_friends %>
     <%= pet.pet_name %>
-    <%= form_tag ({controller: 'friends', action: 'search_friend', method: 'post', id: @user.id}) do %>
+    <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: @user.id}) do %>
         <input class="ui basic button" type=submit value='Add Friend'>
         <% end %>
     <% end %>
