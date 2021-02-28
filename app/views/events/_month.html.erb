@@ -6,8 +6,14 @@
     </div>
 </div>
 
-<% events.each do |event| %>
-<div>
-    <%= link_to event.name, event_path(event) %>
+<div class="row d-flex flex-column">
+    <%if events.nil? %>
+    <p>You do not events for this month</p>
+    <%else %>
+    <% events.each do |event| %>
+    <div>
+        <%= link_to event.name, event_path(event) %>
+    </div>
+    <% end %>
+    <%end%>
 </div>
-<% end %>

@@ -2,7 +2,9 @@ class EventsController < ApplicationController
     before_action :find_event, only: [:show, :edit, :update, :destroy]
 
     def index
-        @events = Event.where(start_time: Date.today.beginning_of_week..Date.today.end_of_week)
+        @events = Event.all
+        @weekly_events = Event.where(start_time: Date.today.beginning_of_week..Date.today.end_of_week)
+        @monthly_events = Event.where(start_time: Date.today.beginning_of_month..Date.today.end_of_month)
     end
 
     def show
