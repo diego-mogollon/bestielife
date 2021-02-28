@@ -4,8 +4,9 @@ class MessagesController < ApplicationController
         @message = Message.new(message_params) 
         @message.chatroom = @chatroom
         @message.user = current_user
+
         if @message.save
-            redirect_to chatroom(@chatroom)
+            redirect_to chatroom(@chatroom, anchor: "message-#{@message.id}")
         else
             render 'chatrooms/show'
         end
