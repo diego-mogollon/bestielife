@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_044309) do
+ActiveRecord::Schema.define(version: 2021_02_28_042052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 2021_02_27_044309) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["expense_type_id"], name: "index_budgets_on_expense_type_id"
     t.index ["pet_id"], name: "index_budgets_on_pet_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "dashboard_categories", force: :cascade do |t|
@@ -101,6 +107,16 @@ ActiveRecord::Schema.define(version: 2021_02_27_044309) do
     t.index ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "pet_name"
     t.date "birthday"
@@ -135,6 +151,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_044309) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -147,5 +164,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_044309) do
   add_foreign_key "expenses", "pets"
   add_foreign_key "favourite_places", "places"
   add_foreign_key "favourite_places", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "pets", "users"
 end

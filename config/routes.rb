@@ -37,5 +37,9 @@ Rails.application.routes.draw do
     resources :favourite_places, except: [:edit, :update]
   end
 
+  #PHOTOS ROUTES
   resources :photos, only: [:show] 
+
+  #CHATROOM ROUTES
+  resources :chatrooms, only: :show
 end

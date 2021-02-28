@@ -21,12 +21,16 @@ user_3 = User.create!(first_name: "test3", last_name: "tester3", email: "user3@u
 user_4 = User.create!(first_name: "test4", last_name: "tester4", email: "user4@user.com", password: 444444)
 user_5 = User.create!(first_name: "tes5", last_name: "tester5", email: "use5@user.com", password: 555555)
 user_6 = User.create!(first_name: "test6", last_name: "tester6", email: "user6@user.com", password: 666666)
+user_7 = User.create!(first_name: "test7", last_name: "tester7", email: "user7@user.com", password: 777777)
+user_8 = User.create!(first_name: "test8", last_name: "tester8", email: "user8@user.com", password: 888888)
+user_9 = User.create!(first_name: "test9", last_name: "tester9", email: "user9@user.com", password: 999999)
+user_10 = User.create!(first_name: "test10", last_name: "tester10", email: "user10@user.com", password: 101010)
 
 puts "#{User.count} User created..."
 
 puts 'Creating 15 items...'
 #individual pet profiles, pet_1 & pet_2 have 9 photos specific to their breed. Note to update to actual Sundae Pictures?
-
+puts 'Creating pet 1...'
 pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990', breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
 file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80')
 pet_1.photos.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
@@ -49,9 +53,9 @@ pet_1.photos.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg')
 
 
 #^^pet profile images 9 x generic photos of silky terrier^^
+puts 'Creating pet 2...'
 
 pet_2 = Pet.create(pet_name: 'Yoshi', birthday: '07/07/1990', breed: "Boxer", microchip: "123456", user_id: user_2.id )
-pet_2.photos.attach(io: file, filename: 'photo22.jpg', content_type: 'image/jpg')
 file = URI.open('https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
 pet_2.photos.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
 file = URI.open('https://images.unsplash.com/photo-1594118319842-b72837a0ecea?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80')
@@ -72,6 +76,8 @@ file = URI.open('https://images.unsplash.com/photo-1590011643604-38b1b6d73d1a?ix
 pet_2.photos.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg')
 
 #^^ pet_2 profile images 9 x generic photos of boxer ^^
+
+puts 'Creating pet 3 and on...'
 
 pet_3 = Pet.create(pet_name: 'Arlo', birthday: '18/05/2019', breed: "Border Collie", microchip: "123456", user_id: user_3.id )
 file = URI.open('https://images.unsplash.com/photo-1551097295-4c28e380cdf6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
