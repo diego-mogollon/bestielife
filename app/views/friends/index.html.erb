@@ -24,20 +24,20 @@
     <% end %>
 
 <h3> Your Friends:</h3>
-    <% if @user.friends? %>
-        <% @friends.each do |friend| %>
+    <% if @user.friends.exists? != true %>
+<h6>You have no Besties, go find some!</h6>
+    <% else %>
+    <% @friends.each do |friend| %>
         <%= link_to  friend.pet.pet_name, photos_show_path(friend) %>
         <% end %>
-    <% else %>
-        <h6>You have 0 Besties, go find some!</h6>
     <% end %>
 
 <h3>Find Friends</h3>
 <% Pet.all.each do |pet| %>
-<% if pet.user.not_friends && pet.pet_name != current_user.pet.pet_name %>
+<% if @user.not_friends && pet.pet_name != current_user.pet.pet_name%>
     <%= pet.pet_name %>
-    <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: @user.id}) do %>
-        <input class="ui basic button" type=submit value='Add Friend'>
+    <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.id}) do %>
+        <input type=submit value='Add Friend'>
         <% end %>
     <% end %>
 <% end %>
