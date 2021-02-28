@@ -1,16 +1,13 @@
-<h1> WEEK </h1>
-<%= link_to "month", events_path(month:true)%>
-<%= week_calendar(number_of_weeks: 1) do |date| %>
-<%= date %>
-<% end %>
+<div class="row">
+    <div class="col-12">
+        <%= week_calendar(number_of_weeks: 1) do |date| %>
+        <div><%= date.to_formatted_s(:short)[0...-4] %></div>
+        <% end %>
+    </div>
+</div>
 
 <% events.each do |event| %>
 <div>
-    <%= event.description %>
-    <%= event.name %>
-    <%= event.start_time %>
-    <%= event.end_time %>
-    <%= link_to "Edit", edit_event_path(event) %>
-    <%= link_to "Delete", event_path(event), method: :delete %>
+    <%= link_to event.name, event_path(event) %>
 </div>
 <% end %>
