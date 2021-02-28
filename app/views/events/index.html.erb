@@ -1,7 +1,7 @@
-<h1> Calendar </h1>
+<%= render 'components/header', path: root_path %>
 <% if params[:month] %>
-<%= render "month" %>
+<%= render "month", events: @events %>
 <% else %>
-<%= render "week" %>
+<%= render "week", events: @events %>
 <% end %>
 <%= link_to "New event", new_event_path%>
