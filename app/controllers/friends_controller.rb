@@ -41,7 +41,7 @@ class FriendsController < ApplicationController
     def search_friend
         @pet = Pet.find(params[:id])
         current_user.friend_request(@pet.user)
-        redirect_to friends_path  
+        redirect_to root_path  
     end
 
     def show

@@ -15,12 +15,9 @@ Rails.application.routes.draw do
 
   #FRIENDS ROUTES
   post '/pets/:id', to: 'friends#search_friend', as: 'search_friend'
-  # post '/pets/:id', to: 'friends#reject_friend', as: 'reject_friend'
   post "/friends/add" => "friends/add"
   post "/friends/reject" => "friends/reject"
   post "/friends/remove" => "friends/remove"
-  get "/friends/search" => "friends/search"
-  post "/friends/search" => "friends/search"
   resources :friends, only: [:new, :index, :create]
 
   #CALENDAR ROUTES
