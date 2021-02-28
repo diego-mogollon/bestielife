@@ -26,7 +26,7 @@ end
 def not_friends
     potential = []
     User.all.each do |user|
-        if(self.friends_with?(user) != true && self != user && self.friends.include?(user) != true && self.pending_friends.include?(user) != true && self.requested_friends.include?(user) != true)
+        if (self.friends_with?(user) != true && self != user && self.friends.include?(user) != true && self.pending_friends.include?(user) != true && self.requested_friends.include?(user) != true && user.pet.pet_name != user.pet.pet_name)
             potential << user
         end
     end
