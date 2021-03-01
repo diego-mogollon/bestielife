@@ -24,14 +24,19 @@ Rails.application.routes.draw do
   resources :events
 
   #EXPENSES ROUTES
-  resources :expenses do  
-   resources :expense_types
-  end
+  # resources :expenses do  
+  #  resources :expense_types
+  # end
 
-  resources :budgets do  
-    resources :expense_types
-  end
+  # resources :budgets do  
+  #   resources :expense_types
+  # end
 
+  resources :expense_types do  
+    resources :expenses
+    resources :budgets
+  end
+ 
   # EXPLORE ROUTES
   resources :places, only: [:index, :show] do
     resources :favourite_places, except: [:edit, :update]

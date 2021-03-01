@@ -1,16 +1,41 @@
-.button-lg {
-  width: $font-size-base * 15;
-  padding: 0.8rem 0;
+.button {
   color: $white;
   border: none;
   outline: none;
+  &.button-sm {
+    width: $font-size-base * 5;
+    padding: 0.5rem 0.8rem;
+  }
+  &.button-md {
+    width: $font-size-base * 10;
+    padding: 0.8rem 0;
+  }
+  &.button-lg {
+    width: $font-size-base * 15;
+    padding: 0.8rem 0;
+  }
   &.primary-blue {
     background-color: $primary-blue;
+  }
+  &.secondary-pink {
+    background-color: $secondary-pink;
   }
   &.primary-green {
     background-color: $primary-green;
   }
   & > a {
     color: $white;
+  }
+
+  &.fab {
+    position: absolute;
+    right: $font-size-base * 2;
+    bottom: $font-size-base * 2;
+    & > .fa-plus-circle {
+      font-size: $font-size-base * 2.5;
+      color: $secondary-orange;
+    }
+  }
+  &.form-button {
   }
 }

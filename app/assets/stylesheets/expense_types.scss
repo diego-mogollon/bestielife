@@ -1,0 +1,21 @@
+// Place all the styles related to the expense_types controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.expense-type-card {
+  border-radius: $font-size-base;
+  width: $font-size-base * 8;
+  height: $font-size-base * 8;
+}
+
+.expense-type-image {
+  & > img {
+    width: 100%;
+  }
+}
+.card-title {
+  font-size: $font-size-base * 1.1;
+  color: $secondary-orange;
+}
+.expense-type-links {
+  font-size: $font-size-base * 0.8;
+}

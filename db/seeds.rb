@@ -11,6 +11,7 @@ puts "cleaning up database"
 # Item.destroy_all
 User.destroy_all
 DashboardCategory.destroy_all
+ExpenseType.destroy_all
 # Category.destroy_all
 puts "database is clean"
 
@@ -122,7 +123,15 @@ DashboardCategory.create!(name: "Friends", url: "pet-house.svg")
 Event.create(pet_id: pet_1.id, name: "Vet", description: "Appointment", start_time: "2021-02-24 04:57", end_time: "2021-02-24 06:57")
 
 
+expense_food = ExpenseType.create(name: "Food", img: 'dog-food.svg', actuals: 0, budget: 0)
+expense_health = ExpenseType.create(name: "Health", img: "dog-health.svg", actuals: 0, budget: 0)
+expense_fashion = ExpenseType.create(name: "Fashion", img: "collar.svg", actuals: 0, budget: 0)
 
+# Budget.create(pet_id: pet_1.id, amount: 300, expense_type_id: expense_food, month: "February")
+# Budget.create(pet_id: pet_1.id, amount: 500, expense_type_id: expense_health, month: "December")
+# Budget.create(pet_id: pet_1.id, amount: 200, expense_type_id: expense_fashion, month: "August")
+
+# Expense.create(pet_id: pet_1.id, amount: 20, expense_type_id: expense_food, date: DateTime.new(2021, 1,2,3,4,5,6))
 # item_2 = Item.create(name: 'Tulum', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "S", user_id: user_2.id )
 # file = URI.open('https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
 # item_2.photo.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')

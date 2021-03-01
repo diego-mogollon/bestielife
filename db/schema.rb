@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_042052) do
+ActiveRecord::Schema.define(version: 2021_03_01_020542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_042052) do
     t.bigint "expense_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "month"
+    t.string "img"
     t.index ["expense_type_id"], name: "index_budgets_on_expense_type_id"
     t.index ["pet_id"], name: "index_budgets_on_pet_id"
   end
@@ -72,9 +74,11 @@ ActiveRecord::Schema.define(version: 2021_02_28_042052) do
 
   create_table "expense_types", force: :cascade do |t|
     t.string "name"
-    t.integer "budget"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "img"
+    t.integer "actuals"
+    t.integer "budget"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -83,6 +87,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_042052) do
     t.bigint "expense_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "date"
+    t.string "description"
     t.index ["expense_type_id"], name: "index_expenses_on_expense_type_id"
     t.index ["pet_id"], name: "index_expenses_on_pet_id"
   end

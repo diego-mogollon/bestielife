@@ -7,7 +7,7 @@
 </div>
 
 <div class="row d-flex flex-column">
-    <%if events.nil? %>
+    <%if events.length.zero? %>
     <p>You do not events for this month</p>
     <%else %>
     <% events.each do |event| %>

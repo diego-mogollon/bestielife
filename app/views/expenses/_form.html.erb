@@ -1,0 +1,14 @@
+<%= render 'components/header', path: expense_type_expenses_path %>
+<div class="row mx-auto flex-column">
+    <div class="col my-3">
+        <h5><%= expense.id ? "Update #{@expense_type.name} expense" : "Add a new #{@expense_type.name} expense"%></h5>
+    </div>
+    <div class="col">
+        <%= simple_form_for(expense, url: url) do |f| %>
+        <%= f.input :description, as: :text%>
+        <%= f.input :amount, as: :integer, required: true%>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "#{expense.id ? "Update" : "Add" } expense", class: "button button-md primary-green" %>
+        <% end %>
+    </div>
+</div>

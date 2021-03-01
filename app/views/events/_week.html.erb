@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-    <%if events.nil? %>
+    <%if events.length.zero? %>
     <p>You do not events for this week</p>
     <%else %>
     <% events.each do |event| %>

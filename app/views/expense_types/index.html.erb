@@ -1,0 +1,38 @@
+<%= render 'components/header', path: root_path %>
+
+<% @expense_types.each do |expense_type| %>
+<div class="row card my-2 shadow border flex-row mx-auto">
+    <div class="col-4">
+        <div class="expense-type-image p-2">
+            <%= image_tag(expense_type.img) %>
+        </div>
+    </div>
+    <div class="col-8 pt-3">
+        <div class="container">
+            <div class="row">
+                <h5 class="card-title"><%= expense_type.name %></h5>
+            </div>
+            <div class="row">
+                <div class="col expense-type-links">
+                    <div class="row">
+                        <span class="text-muted mr-1">Actuals</span> - <span class="ml-1">$<%=expense_type.expenses.sum(:amount)%></span>
+                    </div>
+                    <div class="row">
+                        <%= link_to "View",  expense_type_expenses_path(expense_type) %>
+                    </div>
+                </div>
+                <div class="col expense-type-links">
+                    <div class="row">
+                        <span class="text-muted mr-1">Budget</span> - <span class="ml-1">$<%=expense_type.budget%></span>
+                    </div>
+                    <div class="row">
+                        <%= link_to "View",  expense_type_budgets_path(expense_type) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<% end %>
