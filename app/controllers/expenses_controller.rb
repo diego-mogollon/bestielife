@@ -19,9 +19,10 @@ class ExpensesController < ApplicationController
         @expense.pet = current_user.pet
         @expense.expense_type = @expense_type
         if @expense.save
-            @expense_type.save
+            flash[:notice] = "Expense added successfully"
             redirect_to expense_type_expenses_path
         else
+            flash[:alert] = "Expense could not be added. Please try again"
             render :new
         end
     end
@@ -34,8 +35,10 @@ class ExpensesController < ApplicationController
         @expense.expense_type = @expense_type
         @expense.pet = current_user.pet
         if @expense.update(expense_params)
+            flash[:notice] = "Expense updated successfully"
             redirect_to expense_type_expenses_path
         else
+            flash[:alert] = "Expense could not be updated. Please try again"
             render :edit
         end
     end

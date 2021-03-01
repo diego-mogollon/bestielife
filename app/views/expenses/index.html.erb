@@ -13,7 +13,7 @@
                         <span class="text-muted mr-1">Actuals</span> - <span class="ml-1">$<%=@expense_type.expenses.sum(:amount)%></span>
                     </div>
                     <div class="row">
-                        <span class="text-muted mr-1">Budget</span> - <span class="ml-1">$<%=@expense_type.budget%></span>
+                        <span class="text-muted mr-1">Budget</span> - <span class="ml-1">$<%=@expense_type.budgets.sum(:amount)%></span>
                     </div>
                 </div>
             </div>

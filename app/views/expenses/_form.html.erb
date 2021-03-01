@@ -8,7 +8,7 @@
         <%= f.input :description, as: :text%>
         <%= f.input :amount, as: :integer, required: true%>
         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "#{expense.id ? "Update" : "Add" } expense", class: "button button-md primary-green" %>
+        <%= f.button :submit, "#{expense.id ? "Update" : "Add" }", class: "button button-md primary-green" %>
         <% end %>
     </div>
 </div>

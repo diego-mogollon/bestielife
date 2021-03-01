@@ -19,3 +19,8 @@
 .expense-type-links {
   font-size: $font-size-base * 0.8;
 }
+.expense-type-alert {
+  font-size: $font-size-base * 0.5;
+  background-color: red;
+  color: $white;
+}
