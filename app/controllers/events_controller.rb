@@ -2,7 +2,9 @@ class EventsController < ApplicationController
     before_action :find_event, only: [:show, :edit, :update, :destroy]
 
     def index
-        @events = Event.where(start_time: Date.today.beginning_of_week..Date.today.end_of_week)
+        @events = Event.all
+        @weekly_events = Event.where(start_time: Date.today.beginning_of_week..Date.today.end_of_week)
+        @monthly_events = Event.where(start_time: Date.today.beginning_of_month..Date.today.end_of_month)
     end
 
     def show
@@ -18,8 +20,10 @@ class EventsController < ApplicationController
         @event = Event.new(event_params)
         @event.pet = @pet
         if @event.save
+            flash[:notice] = "Event added successfully"
             redirect_to event_path(@event)
         else
+            flash[:alert] = "Event could not be added. Please try again"
             render new
         end 
     end
@@ -30,8 +34,10 @@ class EventsController < ApplicationController
 
     def update
         if @event.update(event_params)
+            flash[:notice] = "Event updated successfully"
             redirect_to event_path(@event)
         else
+            flash[:alert] = "Event could not be updated. Please try again"
             render :edit
         end
     end

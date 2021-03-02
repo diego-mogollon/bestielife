@@ -6,8 +6,14 @@
     </div>
 </div>
 
-<% events.each do |event| %>
-<div>
-    <%= link_to event.name, event_path(event) %>
+<div class="row">
+    <%if events.length.zero? %>
+    <p>You do not events for this week</p>
+    <%else %>
+    <% events.each do |event| %>
+    <div>
+        <%= link_to event.name, event_path(event) %>
+    </div>
+    <% end %>
+    <%end%>
 </div>
-<% end %>

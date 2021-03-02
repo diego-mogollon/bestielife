@@ -1,0 +1,40 @@
+<%= render 'components/header', path: expense_types_path %>
+<div class="row">
+    <% if @budgets.length.zero? %>
+    <div class="no-expense-container mx-auto mt-5">
+        <p>You do not have budgets set for any month</p>
+    </div>
+    <%else%>
+    <div class="col mx-auto mt-3">
+        <div class="container">
+            <%@budgets.each do |budget|%>
+            <div class="row card shadow rounded flex-row p-3 my-2">
+                <div class="col-3 mt-2">
+                    <%= render 'components/month-card', month: Date::MONTHNAMES[budget.month.to_i][0..2] %>
+                </div>
+                <div class="col-9">
+                    <div class="row pt-1">
+                        <div class="col">
+                            <h6>Budget - $<%= budget.amount%></h6>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <%= link_to "Edit",edit_expense_type_budget_path(@expense_type, budget), class: "button button-sm primary-green" %>
+                        </div>
+                        <div class="col">
+                            <%= link_to "Delete",expense_type_budget_path(@expense_type, budget), method: :delete, class: "button button-sm secondary-pink" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%end%>
+        </div>
+    </div>
+    <%end%>
+</div>
+<%= link_to new_expense_type_budget_path do %>
+<div class="button fab">
+    <i class="fas fa-plus-circle"></i>
+</div>
+<%end%>
