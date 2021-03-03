@@ -38,7 +38,8 @@ Rails.application.routes.draw do
   end
  
   # EXPLORE ROUTES
-  resources :places, only: [:index, :show] do
+ 
+  resources :places, only: [:new] do
     resources :favourite_places, except: [:edit, :update]
   end
 
