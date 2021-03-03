@@ -23,6 +23,8 @@ export default class extends Controller {
       center: new google.maps.LatLng(39.5, -98.35),
       zoom: 4,
     });
+    console.log(google);
+    console.log(this.fieldTarget);
     this.autocomplete = new google.maps.places.Autocomplete(this.fieldTarget);
     this.autocomplete.bindTo('bounds', this.map);
     this.autocomplete.setFields([
@@ -35,7 +37,6 @@ export default class extends Controller {
       'place_changed',
       this.placeChanged.bind(this)
     );
-
     this.marker = new google.maps.Marker({
       map: this.map,
       anchorPoint: new google.maps.Point(0, 29),

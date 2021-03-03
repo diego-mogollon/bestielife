@@ -1,6 +1,6 @@
 <%= form_with(model: place, local: true, data: {
-        controller: :maps,
-        action: "google-maps-callback@window->maps#initializeMap" 
+        controller: :maps
+        # action: "submit->maps#initializeMap" 
     }) do |form| %>
 <div class="field">
     <%= form.label :latitude %>
@@ -16,8 +16,6 @@
     <%= form.label :longitude %>
     <%= form.text_field :longitude, data: {target: "maps.longitude"}, class: "form-control" %>
 </div>
-<%= content_tag :div, nil, data: {target: "maps.map"}, class: "map" %>
-<div class="actions">
-    <%= form.submit %>
-</div>
+<div data-target="maps.map" style="height:400px;width: 100%;"></div>
+
 <%end %>
