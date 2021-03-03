@@ -1,0 +1,54 @@
+<%= render 'components/header', path: expense_types_path %>
+<div class="row">
+    <% if @expenses.length.zero? %>
+    <div class="no-expense-container mx-auto mt-5">
+        <p>You do not have any expenses</p>
+    </div>
+    <%else%>
+    <div class="col mx-auto mt-3">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-4 ml-auto">
+                    <div class="row">
+                        <span class="text-muted mr-1">Actuals</span> - <span class="ml-1">$<%=@expense_type.expenses.sum(:amount)%></span>
+                    </div>
+                    <div class="row">
+                        <span class="text-muted mr-1">Budget</span> - <span class="ml-1">$<%=@expense_type.budgets.sum(:amount)%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Expense</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%@expenses.each do |expense|%>
+                        <tr style="margin-top: 10px;">
+                            <td class="text-muted"><%=expense.date.strftime("%m/%d/%Y")%></td>
+                            <td class="text-muted"><%=expense.description%></td>
+                            <td class="text-muted"><%=expense.amount%></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <%= link_to "Edit",edit_expense_type_expense_path(@expense_type, expense), class: "button button-sm primary-green" %>
+                                <%= link_to "Delete",expense_type_expense_path(@expense_type, expense), method: :delete, class: "button button-sm secondary-pink" %>
+                            </td>
+                        </tr>
+                        <%end%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <%end%>
+</div>
+<%= link_to new_expense_type_expense_path do %>
+<div class="button fab">
+    <i class="fas fa-plus-circle"></i>
+</div>
+<%end%>

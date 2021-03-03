@@ -9,4 +9,15 @@
     </div>
 </div>
 <%end %>
+<% elsif category_title.eql?('Expenses')%>
+<%= link_to expense_types_path do %>
+<div class="card dashboard-card shadow d-flex justify-content-center align-items-center pt-3">
+    <div class="dashboard-card-image">
+        <%= image_tag("#{category_url}") %>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><%= category_title %></h5>
+    </div>
+</div>
+<%end %>
 <% end %>
