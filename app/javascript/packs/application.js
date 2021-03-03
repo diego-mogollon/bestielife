@@ -9,8 +9,10 @@ require('@rails/activestorage').start();
 require('channels');
 import 'bootstrap';
 import { initFlatpickr } from '../plugins/flatpickr';
+import { initChatroomCable } from '../channels/chatroom_channel';
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
+  initChatroomCable();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
