@@ -1,3 +1,7 @@
+<div class= "fluid-container">
+<div class= "container">
+</div>
+<div class= "col-sm-6">
 <h1># <%= @chatroom.name %></h1>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
@@ -10,7 +14,8 @@
     </div>
   <% end %>
 </div>
-
 <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
   <% end %>
+  </div>
+  </div>
