@@ -39,10 +39,11 @@ Rails.application.routes.draw do
  
   # EXPLORE ROUTES
  
-  resources :places, only: [:new] do
-    resources :favourite_places, except: [:edit, :update]
-  end
+  # resources :places, only: [:new] do
+  #   resources :favourite_places, except: [:edit, :update]
+  # end
 
+  get '/places', to: 'places#index'
   #PHOTOS ROUTES
   resources :photos, only: [:show] 
 
