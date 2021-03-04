@@ -120,7 +120,11 @@ DashboardCategory.create!(name: "Explore", url: "map.svg")
 DashboardCategory.create!(name: "Photos", url: "gallery.svg")
 DashboardCategory.create!(name: "Friends", url: "pet-house.svg")
 
-Event.create(pet_id: pet_1.id, name: "Vet", description: "Appointment", start_time: "2021-02-24 04:57", end_time: "2021-02-24 06:57")
+Event.create(pet_id: pet_1.id, name: "Bestie Beach Session", description: "The Gang: Snowy, Arlo, Marmaduke", start_time: "2021-03-04 09:00", end_time: "2021-03-04 09:30")
+Event.create(pet_id: pet_1.id, name: "Play Date", description: "Play Date With Arlo", start_time: "2021-03-04 07:00", end_time: "2021-03-04 07:30")
+Event.create(pet_id: pet_1.id, name: "Puppachino with Peter the Pug", description: "Sundae's Cafe", start_time: "2021-03-06 08:00", end_time: "2021-03-06 08:30")
+Event.create(pet_id: pet_1.id, name: "Training Session", description: "Outdoor Training, to stop giving everyone so many kisses", start_time: "2021-03-05 11:00", end_time: "2021-03-05 11:30")
+Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tasting, organic GF, DF, SF, NF, RSF, PALEO", start_time: "2021-03-7 08:00", end_time: "2021-03-07 08:30")
 
 
 expense_food = ExpenseType.create(name: "Food", img: 'dog-food.svg', actuals: 0, budget: 0)
