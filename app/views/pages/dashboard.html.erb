@@ -19,11 +19,8 @@
     </div>
 
 </div>
-</div>
-<div class="row dashboard ml-2 mt-2 px-4 pt-2">
+<div class="dashboard d-flex flex-wrap justify-content-around">
     <% @dashboard_categories.each do |category| %>
-    <div class="col-6 my-2">
         <%= render 'components/dashboard-card', category_title: category.name, category_url: category.url %>
-    </div>
     <% end %>
 </div>
