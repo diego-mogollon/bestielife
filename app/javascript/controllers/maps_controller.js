@@ -11,7 +11,7 @@ import { Controller } from 'stimulus';
 let markers = [];
 
 export default class extends Controller {
-  static targets = ['field', 'map', 'latitude', 'longitude'];
+  static targets = ['field', 'map', 'latitude', 'longitude', 'place'];
 
   connect() {
     if (typeof google != 'undefined') {
@@ -111,6 +111,7 @@ export default class extends Controller {
 
     service.textSearch(request, function (places, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
+        console.log(places);
         places.slice(0, 5).forEach((place) => {
           let marker = new google.maps.Marker({
             map: map,
@@ -121,6 +122,18 @@ export default class extends Controller {
           });
           marker.setVisible(true);
           markers = [...markers, marker];
+          map.setZoom(10);
+
+          const infowindow = new google.maps.InfoWindow({
+            content: `<div>
+                  <h6>${place.name}</h6>
+                  <span class="text-muted">${place.formatted_address}</span>
+                  </div>`,
+          });
+          // this.placeTarget.value = place.name;
+          marker.addListener('click', () => {
+            infowindow.open(map, marker);
+          });
         });
       }
     });

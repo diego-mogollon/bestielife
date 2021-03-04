@@ -1,14 +1,14 @@
 <div class="row my-5">
-    <div class="col-6 mx-auto">
+    <div class="col-9 mx-auto">
         <div class="container">
             <div class="row">
                 <div class="col-2 mx-auto mb-2">
                     <%= image_tag('paw-logo.svg', class: 'paw-logo') %>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 mx-auto">
-                    <h3>New Pet Form</h3>
+            <div class="row border mt-2">
+                <div class="col-12 mx-auto text-center">
+                    <h4>We would love to know more about your bestie!!</h4>
                 </div>
             </div>
         </div>
@@ -16,27 +16,37 @@
 </div>
 <div class="row mx-3">
     <div class="col-12 mx-auto">
-        <h5>Sign up</h5>
-        <p class="text-muted">Register with details</p>
         <%= simple_form_for @pet do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-group form-icons ">
-            <span class="fa fa-user"></span>
+        <div class="form-group form-icons">
+            <span class="fas fa-file-signature"></span>
             <%= f.input :pet_name,
                 label: false,
+                placeholder: 'Pet name',
                 required: true,
                 autofocus: true
             %>
         </div>
 
         <div class="form-group form-icons ">
-            <span class="fa fa-user"></span>
+            <span class="fas fa-dog"></span>
             <%= f.input :breed,
                 label: false,
+                placeholder: 'Breed',
                 required: true,
                 autofocus: true
                 %>
+        </div>
+
+        <div class="form-group form-icons ">
+            <span class="fas fa-birthday-cake"></span>
+            <%= f.input :birthday, as: :string, label: false, placeholder: 'Birthday',required: true, input_html: {class: "datepicker"} %>
+        </div>
+
+        <div class="form-group form-icons ">
+            <span class="fas fa-microchip"></span>
+            <%= f.input :microchip, as: :string, label: false, placeholder: 'Chip ID',required: true %>
         </div>
 
         <div class="form-actions ml-4 mb-3">

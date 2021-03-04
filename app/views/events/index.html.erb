@@ -4,4 +4,8 @@
 <% else %>
 <%= render "week", events: @weekly_events %>
 <% end %>
-<%= link_to "New event", new_event_path%>
+<%= link_to new_event_path do %>
+<div class="button fab">
+    <i class="fas fa-plus-circle"></i>
+</div>
+<%end%>

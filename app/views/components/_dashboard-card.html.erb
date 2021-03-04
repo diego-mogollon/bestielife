@@ -20,4 +20,26 @@
     </div>
 </div>
 <%end %>
+<% elsif category_title.eql?('Explore')%>
+<%= link_to places_path do %>
+<div class="card dashboard-card shadow d-flex justify-content-center align-items-center pt-3">
+    <div class="dashboard-card-image">
+        <%= image_tag("#{category_url}") %>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><%= category_title %></h5>
+    </div>
+</div>
+<%end %>
+<% elsif category_title.eql?('Friends')%>
+<%= link_to friends_path do %>
+<div class="card dashboard-card shadow d-flex justify-content-center align-items-center pt-3">
+    <div class="dashboard-card-image">
+        <%= image_tag("#{category_url}") %>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><%= category_title %></h5>
+    </div>
+</div>
+<%end %>
 <% end %>

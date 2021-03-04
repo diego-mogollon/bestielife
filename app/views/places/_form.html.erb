@@ -1,21 +1,18 @@
-<%= form_with(model: place, local: true, data: {
+<%= render 'components/header', path: root_path %>
+<div class="row">
+    <div class="col mx-auto">
+        <%= form_with(model: place, local: true, data: {
         controller: :maps
         # action: "submit->maps#initializeMap" 
     }) do |form| %>
-<div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, data: {target: "maps.latitude"}, class: "form-control" %>
-</div>
 
-<div class="field">
-    <%= form.label :search %>
-    <%= form.search_field :search, name: nil, data: {target: "maps.field", action: "keydown->maps#preventSubmit" }, class: "form-control" %>
-</div>
+        <div class="field my-5">
+            <%= form.label :search %>
+            <%= form.search_field :search, name: nil, data: {target: "maps.field", action: "keydown->maps#preventSubmit" }, class: "form-control" %>
+        </div>
 
-<div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, data: {target: "maps.longitude"}, class: "form-control" %>
-</div>
-<div data-target="maps.map" style="height:400px;width: 100%;"></div>
+        <div data-target="maps.map" style="height:500px;width: 100%;"></div>
 
-<%end %>
+        <%end %>
+    </div>
+</div>

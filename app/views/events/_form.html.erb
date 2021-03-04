@@ -1,9 +1,16 @@
-<div class="col-6 offset-3 mt-5">
-    <%= simple_form_for(event) do |f| %>
-    <%= f.input :name, as: :string, required: true%>
-    <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 10 } %>
-    <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.button :submit, "Update Event", class: "button" %>
-    <% end %>
+<%= render 'components/header', path: events_path %>
+<div class="row mx-auto flex-column mt-3">
+    <div class="col my-3">
+        <h5><%= event.id ? "Update event" : "Add a new event"%></h5>
+    </div>
+    <div class="col">
+        <%= simple_form_for(event) do |f| %>
+        <%= f.input :name, as: :string, required: true%>
+        <%= f.input :description, as: :text, required: true %>
+        <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+        <%= f.input :end_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "#{event.id ? "Update" : "Add" }", class: "button button-md primary-green" %>
+        <% end %>
+    </div>
+
 </div>
