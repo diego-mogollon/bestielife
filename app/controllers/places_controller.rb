@@ -10,4 +10,8 @@ class PlacesController < ApplicationController
     def create
         
     end
+
+    def coordinates_params
+        params.require(:place).permit(:lat, :lng)
+    end
 end
