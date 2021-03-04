@@ -9,7 +9,7 @@ class PetsController < ApplicationController
         @pet = Pet.new(pet_params)
         current_user.pet = @pet
         if @pet.save
-            redirect_to dashboard_path
+            redirect_to root_path
         else
             render new
         end
@@ -27,6 +27,6 @@ class PetsController < ApplicationController
     
     private
     def pet_params
-        params.require(:pet).permit(:breed, :name)
+        params.require(:pet).permit(:breed, :name, :birthday, :microchip)
     end
 end

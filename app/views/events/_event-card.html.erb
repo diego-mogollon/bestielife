@@ -1,0 +1,24 @@
+<div class="row card shadow rounded flex-row p-3 my-2">
+    <div class="col-9 mx-auto">
+        <div class="container">
+            <div class="row mb-1">
+                <span class="text-muted"><%= event.description %></span>
+            </div>
+            <div class="row mb-1">
+                <%= link_to event.name, event_path(event) %>
+            </div>
+            <div class="row">
+                <span><%= event.start_time.strftime('%d %b %y') %></span>
+                <span class="ml-auto"><%= event.start_time.strftime('%I%P') %></span>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <%= link_to "Edit",edit_event_path(event), class: "button button-sm primary-green" %>
+                </div>
+                <div class="col">
+                    <%= link_to "Delete",event_path(event), method: :delete, class: "button button-sm secondary-pink" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

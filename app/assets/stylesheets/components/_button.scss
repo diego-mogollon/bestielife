@@ -31,11 +31,10 @@
     position: absolute;
     right: $font-size-base * 2;
     bottom: $font-size-base * 2;
+    z-index: 2;
     & > .fa-plus-circle {
       font-size: $font-size-base * 2.5;
       color: $secondary-orange;
     }
-  }
-  &.form-button {
   }
 }

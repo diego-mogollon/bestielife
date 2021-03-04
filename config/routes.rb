@@ -43,7 +43,8 @@ Rails.application.routes.draw do
   #   resources :favourite_places, except: [:edit, :update]
   # end
 
-  get '/places', to: 'places#index'
+  get '/places', to: 'places#index', as: 'places'
+  get '/places/show/:name', to: 'places#show', as: 'show_place' 
   #PHOTOS ROUTES
   resources :photos, only: [:show] 
 

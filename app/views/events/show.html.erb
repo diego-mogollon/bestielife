@@ -1,5 +1,5 @@
 <%= render 'components/header', path: events_path %>
 <h4><%= @event.name %></h4>
 <p><%= @event.description %></p>
-<%= link_to "Edit", edit_event_path(@event) %>
-<%= link_to "Delete", event_path(@event), method: :delete %>
+<%= link_to "Edit", edit_event_path(@event),class: "button button-sm primary-green" %>
+<%= link_to "Delete", event_path(@event), method: :delete, class: "button button-sm secondary-pink" %>

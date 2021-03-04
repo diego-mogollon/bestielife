@@ -8,12 +8,16 @@
 
 <div class="row d-flex flex-column">
     <%if events.length.zero? %>
-    <p>You do not events for this month</p>
-    <%else %>
-    <% events.each do |event| %>
-    <div>
-        <%= link_to event.name, event_path(event) %>
+    <div class="no-expense-container mx-auto mt-5">
+        <p>You do not have any events for this month</p>
     </div>
-    <% end %>
+    <%else %>
+    <div class="col flex-column">
+        <div class="container">
+            <% events.each do |event| %>
+            <%= render 'event-card', event: event %>
+            <%end%>
+        </div>
+    </div>
     <%end%>
 </div>
