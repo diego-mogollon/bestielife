@@ -35,10 +35,11 @@
 
 <h3>Find Friends</h3>
 <% Pet.all.each do |pet| %>
-<% if @user.not_friends && pet.pet_name != current_user.pet.pet_name%>
-    <%= pet.pet_name %>
-    <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.id}) do %>
-        <input type=submit value='Add Friend'>
+    <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name%>
+        <%= pet.pet_name %>
+        <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.user.id}) do %>
+            <input type=submit value='Add Friend'>
+            <% end %>
         <% end %>
     <% end %>
-<% end %>
+
