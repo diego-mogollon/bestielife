@@ -1,1 +1,4 @@
-<h1> This is the main Chatroom </h2>
+<h1> This is the main Chatroom </h1>
+<% @chatrooms.each do |chatroom| %>
+<h4><%= link_to chatroom.name, chatroom_path(chatroom) %></h4>
+<% end %>
