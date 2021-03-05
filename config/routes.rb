@@ -45,8 +45,9 @@ Rails.application.routes.draw do
 
   get '/places', to: 'places#index', as: 'places'
   get '/places/show/:name', to: 'places#show', as: 'show_place' 
+  
   #PHOTOS ROUTES
-  resources :photos, only: [:show] 
+  resources :photos, only: [:show, :index] 
 
   #CHATROOM ROUTES
   resources :chatrooms, only: [:show, :index] do 
