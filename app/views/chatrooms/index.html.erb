@@ -1,11 +1,9 @@
 <h1> This is the main Chatroom </h1>
-<div class="chatroom-main">
+<div class="chatroom-body">
 <% @chatrooms.each do |chatroom| %>
 <div class="chatroom-card">
-<h3 class="chatroom-title"><%= chatroom.name %></h3>
-<div class="visual"
-<p class="button button-md"><%= link_to "Enter", chatroom_path(chatroom) %></p>
-</div>
+<h3><%= chatroom.name %></h3>
+<%= link_to "Enter", chatroom_path(chatroom), class:'button button-sm primary-green'%>
 </div>
 <% end %>
 </div>
