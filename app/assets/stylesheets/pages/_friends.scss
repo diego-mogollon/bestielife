@@ -1,3 +1,20 @@
 // Place all the styles related to the friends controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.friends-main {
+    display: grid;
+    grid-template-columns: minmax(180px, 25%) auto;
+    padding: 0;
+    margin: 0;
+}
+.friends-management {
+    height: 100vh;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.friends-find {
+    height: 100vh;
+    margin-top: 20px;
+    text-align: center;
+}

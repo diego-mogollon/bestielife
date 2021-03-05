@@ -2,13 +2,14 @@
   color: $white;
   border: none;
   outline: none;
+  border-radius: 5px;
   &.button-sm {
     width: $font-size-base * 5;
     padding: 0.5rem 0.8rem;
   }
   &.button-md {
     width: $font-size-base * 10;
-    padding: 0.8rem 0;
+    padding: 0.7rem 0;
   }
   &.button-lg {
     width: $font-size-base * 15;
