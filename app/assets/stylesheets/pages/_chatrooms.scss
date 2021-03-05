@@ -1,3 +1,30 @@
 // Place all the styles related to the chatrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.chatroom-main {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+.chatroom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px $secondary-orange;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.visual {
+    display: grid;
+    height: 50%;
+    width: 100%;
+    background: wheat;
+    margin: 0.5rem 0;
+    place-items: center;
+}
+// chatroom-title
+
+// chatroom-description
+
+// visual
