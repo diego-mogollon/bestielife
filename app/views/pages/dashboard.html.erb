@@ -4,7 +4,7 @@
             <div class="col-2"><%= image_tag('paw-logo.svg', class: 'paw-logo') %></div>
             <%= render 'components/hamburger-menu', dashboard: true %>
         </div>
-        <div class="row">
+        <div class="container">
             <div class="col-4 mx-auto">
                 <% if @pet.photos.any? %>
                 <%= image_tag(@pet.photos.first, class: 'avatar rounded-circle') %>

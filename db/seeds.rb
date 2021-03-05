@@ -127,6 +127,10 @@ Event.create(pet_id: pet_1.id, name: "Puppachino with Peter the Pug", descriptio
 Event.create(pet_id: pet_1.id, name: "Training Session", description: "Outdoor Training, to stop giving everyone so many kisses", start_time: "2021-03-05 11:00", end_time: "2021-03-05 11:30")
 Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tasting, organic GF, DF, SF, NF, RSF, PALEO", start_time: "2021-03-7 08:00", end_time: "2021-03-07 08:30")
 
+# CHATROOM SEED
+Chatroom.create(name: "Food")
+Chatroom.create(name: "Health")
+Chatroom.create(name: "Explore")
 
 expense_food = ExpenseType.create(name: "Food", img: 'dog-food.svg', actuals: 0, budget: 0)
 expense_health = ExpenseType.create(name: "Health", img: "dog-health.svg", actuals: 0, budget: 0)
