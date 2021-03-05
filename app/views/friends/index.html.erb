@@ -7,7 +7,7 @@
 <h6>You have no Besties, go find some!</h6>
     <% else %>
     <% @friends.each do |friend| %>
-        <%= link_to  friend.pet.pet_name, photos_show_path(friend) %>
+        <%= link_to  friend.pet.pet_name, friends_path %>
         <% end %>
     <% end %>
 <h4> Requests</h4>
@@ -37,7 +37,7 @@
 <div class="section friends-find">
 <h4> Find Friends </h4>
 <p><% Pet.all.each do |pet| %></p>
-    <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name%>
+    <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name && !current_user.friends.include?(pet.user) %>
         <%= pet.pet_name %>
         <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.user.id}) do %>
             <input class='button button-md primary-green' type=submit value='Request'>
