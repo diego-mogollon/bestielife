@@ -5,6 +5,8 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   validates :first_name, :last_name, presence: true
   has_one :pet, dependent: :destroy
+  has_many :chatrooms, dependent: :destroy
+  has_many :messages, dependent: :destroy
   has_friendship
 
   def friends?
