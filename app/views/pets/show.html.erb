@@ -1,12 +1,21 @@
-<%= render 'components/header', path: root_path %>
-<h1> This is photos </h1>
-<% if current_user == @pet.user %>
-<%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
-    <%= f.input :photo, as: :file  %> 
-    <%= f.submit %> 
-<% end %>
-<% end %>
-<% @pet.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, width: 100 %>
-    <%= link_to "See picture", photo_path(photo.id) %>
-    <% end %>
+<div class="pets-main">
+    <%= render 'components/header', path: root_path %>
+    <h1><%= @pet.pet_name %>'s photos </h1>
+        <div class="info">
+        <% if current_user == @pet.user %>
+            <%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
+            <%= f.input :photo, as: :file, :label => "Add"  %> 
+            <%= f.submit %> 
+        <% end %>
+        </div>
+        <div class="pets-body">
+            <% @pet.photos.each do |photo| %>
+                <div class="card">
+                <%= cl_image_tag photo.key, :aspect_ratio=>"1:1", :radius=>"20:80", crop: :fill %>
+                <%= link_to "See picture", photo_path(photo.id) %>
+                </div>
+                <% end %>
+        </div>
+        <% end %>
+    </div>
+</div>
