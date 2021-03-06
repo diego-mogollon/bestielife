@@ -1,11 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 require "open-uri"
 puts "cleaning up database"
 # Item.destroy_all
@@ -30,7 +24,7 @@ user_10 = User.create!(first_name: "test10", last_name: "tester10", email: "user
 puts "#{User.count} User created..."
 
 puts 'Creating 15 items...'
-#individual pet profiles, pet_1 & pet_2 have 9 photos specific to their breed. Note to update to actual Sundae Pictures?
+
 puts 'Creating pet 1...'
 pet_1 = Pet.create(pet_name: 'Sundae', birthday: '07/07/1990', breed: "Silky Terrier", microchip: "123456", user_id: user_1.id )
 file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80')
@@ -127,24 +121,42 @@ Event.create(pet_id: pet_1.id, name: "Puppachino with Peter the Pug", descriptio
 Event.create(pet_id: pet_1.id, name: "Training Session", description: "Outdoor Training, to stop giving everyone so many kisses", start_time: "2021-03-05 11:00", end_time: "2021-03-05 11:30")
 Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tasting, organic GF, DF, SF, NF, RSF, PALEO", start_time: "2021-03-7 08:00", end_time: "2021-03-07 08:30")
 
+puts "Creating Chatrooms"
 # CHATROOM SEED
+
 Chatroom.create(name: "General")
-Chatroom.create(name: "Food")
-Chatroom.create(name: "Health")
-Chatroom.create(name: "Explore")
+Chatroom.create!(name: "Food")
+Chatroom.create!(name: "Health")
+Chatroom.create!(name: "Explore")
 
-expense_food = ExpenseType.create(name: "Food", img: 'dog-food.svg', actuals: 0, budget: 0)
-expense_health = ExpenseType.create(name: "Health", img: "dog-health.svg", actuals: 0, budget: 0)
-expense_fashion = ExpenseType.create(name: "Fashion", img: "collar.svg", actuals: 0, budget: 0)
+puts "Creating expense types"
+#EXPENSE_TYPE SEED
+expense_types_1 = ExpenseType.create!(name: "Food", img: 'dog-food.svg', actuals: 0, budget: 0)
+expense_types_2 = ExpenseType.create!(name: "Health", img: "dog-health.svg", actuals: 0, budget: 0)
+expense_types_3 = ExpenseType.create!(name: "Fashion", img: "collar.svg", actuals: 0, budget: 0)
 
-# Budget.create(pet_id: pet_1.id, amount: 300, expense_type_id: expense_food, month: "February")
-# Budget.create(pet_id: pet_1.id, amount: 500, expense_type_id: expense_health, month: "December")
-# Budget.create(pet_id: pet_1.id, amount: 200, expense_type_id: expense_fashion, month: "August")
+puts "Creating budget"
 
-# Expense.create(pet_id: pet_1.id, amount: 20, expense_type_id: expense_food, date: DateTime.new(2021, 1,2,3,4,5,6))
-# item_2 = Item.create(name: 'Tulum', price: rand(30..100), description: "Phasellus pretium mauris erat, at egestas massa accumsan vel.", size: "S", user_id: user_2.id )
-# file = URI.open('https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
-# item_2.photo.attach(io: file, filename: 'photo2.jpg', content_type: 'image/jpg')
+Budget.create!(pet_id: pet_1.id, amount: 350, expense_type_id: expense_types_1.id, month: 'March')
+Budget.create!(pet_id: pet_1.id, amount: 500, expense_type_id: expense_types_2.id, month: 'March')
+Budget.create!(pet_id: pet_1.id, amount: 700, expense_type_id: expense_types_3.id, month: 'March')
 
+puts "Creating expense"
+#Food Expenses
+Expense.create!(pet_id: pet_1.id, amount: 50, expense_type_id: expense_types_1.id, date: DateTime.new(2021, 3,3,5,6), description:'Ziwi Pebbles')
+Expense.create!(pet_id: pet_1.id, amount: 150, expense_type_id: expense_types_1.id, date: DateTime.new(2021, 8,3,5,6), description:'Treats')
+Expense.create!(pet_id: pet_1.id, amount: 70, expense_type_id: expense_types_1.id, date: DateTime.new(2021, 9,3,5,6), description:'Jerky Straps')
+Expense.create!(pet_id: pet_1.id, amount: 10, expense_type_id: expense_types_1.id, date: DateTime.new(2021, 10,3,5,6), description:'Puppachinos')
+Expense.create!(pet_id: pet_1.id, amount: 30, expense_type_id: expense_types_1.id, date: DateTime.new(2021, 11,3,5,6), description:'Doggie Cookies')
+#Health Expenses
+Expense.create!(pet_id: pet_1.id, amount: 100, expense_type_id: expense_types_2.id, date: DateTime.new(2021, 3,3,5,6), description:'Teeth Cleaning')
+Expense.create!(pet_id: pet_1.id, amount: 50, expense_type_id: expense_types_2.id, date: DateTime.new(2021, 8,3,5,6), description:'Ear Drops')
+Expense.create!(pet_id: pet_1.id, amount: 100, expense_type_id: expense_types_2.id, date: DateTime.new(2021, 9,3,5,6), description:'Vet Checkup')
+Expense.create!(pet_id: pet_1.id, amount: 25, expense_type_id: expense_types_2.id, date: DateTime.new(2021, 10,3,5,6), description:'Medication')
+#Fashion Expenses
+Expense.create!(pet_id: pet_1.id, amount: 200, expense_type_id: expense_types_3.id, date: DateTime.new(2021, 3,3,5,6), description:'Gucci Collar')
+Expense.create!(pet_id: pet_1.id, amount: 300, expense_type_id: expense_types_3.id, date: DateTime.new(2021, 8,3,5,6), description:'Versace Bedding')
+Expense.create!(pet_id: pet_1.id, amount: 100, expense_type_id: expense_types_3.id, date: DateTime.new(2021, 9,3,5,6), description:'Manipaw')
+Expense.create!(pet_id: pet_1.id, amount: 70, expense_type_id: expense_types_3.id, date: DateTime.new(2021, 10,3,5,6), description:'Celebrity Doggy Day Care')
 
 puts 'Finished!'
