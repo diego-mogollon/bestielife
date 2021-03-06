@@ -1,3 +1,32 @@
 // Place all the styles related to the pets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.pets-main {
+    height: 100%;
+    margin: 0;
+}
+.pets-body {
+    display: grid;
+    object-fit: fill; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    
+    cursor: pointer;
+    .card { 
+        border-style: hidden;
+        overflow: hidden; 
+        .info {
+            margin: 8rem;
+            padding: 2rem;
+            display: none;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+.add-link {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+}
