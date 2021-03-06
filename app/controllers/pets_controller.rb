@@ -9,7 +9,7 @@ class PetsController < ApplicationController
         @pet = Pet.new(pet_params)
         current_user.pet = @pet
         if @pet.save
-            redirect_to root_path
+            redirect_to pet_path(@pet)
         else
             render new
         end

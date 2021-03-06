@@ -128,6 +128,7 @@ Event.create(pet_id: pet_1.id, name: "Training Session", description: "Outdoor T
 Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tasting, organic GF, DF, SF, NF, RSF, PALEO", start_time: "2021-03-7 08:00", end_time: "2021-03-07 08:30")
 
 # CHATROOM SEED
+Chatroom.create(name: "General")
 Chatroom.create(name: "Food")
 Chatroom.create(name: "Health")
 Chatroom.create(name: "Explore")
