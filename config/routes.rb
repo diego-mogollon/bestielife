@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   root to: 'pages#home'
 
-  resources :pets, only: [:new, :create] do 
+  resources :pets, only: [:new, :create, :show] do 
     member do
       post :add_picture
       delete :remove_picture

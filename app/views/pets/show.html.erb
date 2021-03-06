@@ -1,7 +1,10 @@
+<%= render 'components/header', path: root_path %>
 <h1> This is photos </h1>
+<% if current_user == @pet.user %>
 <%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
     <%= f.input :photo, as: :file  %> 
     <%= f.submit %> 
+<% end %>
 <% end %>
 <% @pet.photos.each do |photo| %>
     <%= cl_image_tag photo.key, width: 100 %>

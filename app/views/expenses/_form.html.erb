@@ -5,7 +5,7 @@
     </div>
     <div class="col">
         <%= simple_form_for(expense, url: url) do |f| %>
-        <%= f.input :description, as: :text%>
+        <%= f.input :description, as: :text, required: true%>
         <%= f.input :amount, as: :integer, required: true%>
         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.button :submit, "#{expense.id ? "Update" : "Add" }", class: "button button-md primary-green" %>

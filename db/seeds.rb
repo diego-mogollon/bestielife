@@ -123,6 +123,8 @@ Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tastin
 
 puts "Creating Chatrooms"
 # CHATROOM SEED
+
+Chatroom.create(name: "General")
 Chatroom.create!(name: "Food")
 Chatroom.create!(name: "Health")
 Chatroom.create!(name: "Explore")
