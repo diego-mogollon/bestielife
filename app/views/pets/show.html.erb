@@ -18,4 +18,21 @@
         </div>
         <% end %>
     </div>
+    </div>
 </div>
+    <% if current_user == @pet.user && params[:add_photo] %>
+    <div class="add-link">
+    <%= link_to add_photo: true do %> 
+    <div class="button fab">
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <% end %>
+        <%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
+        <%= f.input :photo, as: :file, :label => "Add"  %>
+        <%= f.submit %> 
+        <%end%>
+    <% end %>
+</div>
+
+            
+        

@@ -13,7 +13,8 @@
     
     cursor: pointer;
     .card { 
-        border-style: hidden; 
+        border-style: hidden;
+        overflow: hidden; 
         .info {
             margin: 8rem;
             padding: 2rem;
@@ -23,4 +24,9 @@
             width: 100%;
         }
     }
+}
+.add-link {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
 }
