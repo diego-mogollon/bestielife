@@ -1,5 +1,5 @@
 <div class="pets-main">
-    <%= render 'components/header', path: pet_path %>
+    <%= render 'components/header', path: root_path %>
     <h1><%= @pet.pet_name %>'s photos </h1>
         <div class="info">
         <% if current_user == @pet.user %>
