@@ -16,12 +16,22 @@
     background-color: $primary-green;
   }
 }
-.profile-pic {
-  width: 100px;
-  height: 100px;
-}
-
 .dashboard {
   gap: 10px 20px;
   margin-top: 24px;
+}
+
+.profile-header {
+  width: 100%;
+  text-align: center;
+}
+
+.profile-pic {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.profile-text {
+  position: relative;
+  align-content: center;
 }
