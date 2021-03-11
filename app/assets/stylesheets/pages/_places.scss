@@ -1,3 +1,29 @@
 // Place all the styles related to the places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.place-header {
+  background-color: $primary-blue;
+}
+.fa-phone {
+  color: $secondary-pink;
+}
+.fa-star {
+  color: $yellow;
+}
+.fa-heart {
+  color: $red;
+}
+.icon {
+  width: $font-size-base * 2;
+  height: $font-size-base * 2;
+  &.logout {
+    width: $font-size-base * 1.5;
+    height: $font-size-base * 1.5;
+    margin-top: 5px;
+  }
+  &.edit,
+  &.delete {
+    width: $font-size-base * 1.2;
+    height: $font-size-base * 1.2;
+  }
+}

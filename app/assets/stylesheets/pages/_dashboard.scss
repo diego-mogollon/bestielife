@@ -1,14 +1,24 @@
-.paw-logo {
+.logo {
   width: 30px;
   height: 30px;
+  &.cafe-logo,
+  &.heart-logo {
+    width: 50px;
+    height: 50px;
+  }
 }
 .header {
   background-color: $primary-blue;
   color: $white;
+  border-bottom-left-radius: $font-size-base * 1.5;
+  border-bottom-right-radius: $font-size-base * 1.5;
+  &.green {
+    background-color: $primary-green;
+  }
 }
 .dashboard {
- gap: 10px 20px;
- margin-top: 24px;
+  gap: 10px 20px;
+  margin-top: 24px;
 }
 
 .profile-header {

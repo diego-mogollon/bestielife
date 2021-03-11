@@ -2,11 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.calendar-heading {
+.event-name {
+  font-size: $font-size-base * 0.8;
 }
 
 .calendar-title,
 .fa-forward,
 .fa-backward {
   color: red;
+}
+.simple-calendar {
+  margin: 0;
+  padding: 0;
+}
+.table-striped {
+  font-size: $font-size-base * 0.8;
+}
+.event-link {
+  color: $secondary-orange;
 }

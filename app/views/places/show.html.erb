@@ -1,3 +1,65 @@
-<div data-controller="maps">
-    <p data-maps-target="place"></p>
+<div class="row header border pb-3">
+    <div class="container">
+        <div class="row my-3">
+            <%= render 'components/header', path: places_path, white_header: true %>
+        </div>
+        <div class="row">
+            <div class="col-2 mx-auto">
+                <%= image_tag('coffee-cup.svg', class: 'logo cafe-logo') %>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col mx-auto text-center">
+                <h5><%= @location.name %></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="col-9 mx-auto text-center">
+        <% if @location.address.nil? %>
+        <span class="text-muted ml-2">Not available</span>
+        <%else%>
+        <span class="text-muted ml-2"><%= @location.address %></span>
+        <%end%>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="col-6">
+        <i class="fas fa-phone"></i>
+        <% if @location.phone.nil? %>
+        <span class="text-muted ml-2">Not available</span>
+        <%else%>
+        <span class="text-muted ml-2"><%= @location.phone if !@location.phone.nil? %></span>
+        <%end%>
+    </div>
+    <div class="col-4 ml-auto">
+        <%@location.rating.times do%>
+        <i class="fas fa-star"></i>
+        <%end%>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <%= image_tag(@location.photo) %>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-4">
+        <%= link_to add_to_favourites_path(@location) do %>
+        <% if @is_favourite %>
+        <i class="fas fa-heart"></i>
+        <%else%>
+        <i class="far fa-heart"></i>
+        <% end %>
+        <%end%>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-6">
+        <%= link_to 'See your favourites', favourite_places_path, class: "button button-sm primary-green" %>
+    </div>
+    <div class="col-6">
+        <%= link_to 'Find a new place', places_path, class: "button button-sm secondary-pink" %>
+    </div>
 </div>
