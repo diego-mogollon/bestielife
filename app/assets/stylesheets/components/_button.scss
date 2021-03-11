@@ -29,13 +29,17 @@
   }
 
   &.fab {
-    position: absolute;
-    right: $font-size-base * 2;
-    bottom: $font-size-base * 2;
+    position: fixed;
+    right: $font-size-base * 3;
+    bottom: $font-size-base * 3;
     z-index: 2;
     & > .fa-plus-circle {
       font-size: $font-size-base * 2.5;
       color: $secondary-orange;
+    }
+    & > img {
+      width: 50px;
+      height: 50px;
     }
   }
 }

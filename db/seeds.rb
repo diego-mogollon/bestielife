@@ -6,6 +6,8 @@ puts "cleaning up database"
 User.destroy_all
 DashboardCategory.destroy_all
 ExpenseType.destroy_all
+Place.destroy_all
+FavouritePlace.destroy_all
 # Category.destroy_all
 puts "database is clean"
 

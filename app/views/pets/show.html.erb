@@ -1,38 +1,35 @@
 <div class="pets-main">
     <%= render 'components/header', path: pet_path %>
     <h1><%= @pet.pet_name %>'s photos </h1>
-        <div class="info">
+    <div class="info">
         <% if current_user == @pet.user %>
-            <%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
-            <%= f.input :photo, as: :file, :label => "Add"  %> 
-            <%= f.submit %> 
-        <% end %>
-        </div>
-        <div class="pets-body">
-            <% @pet.photos.each do |photo| %>
-                <div class="card">
-                <%= cl_image_tag photo.key, :aspect_ratio=>"1:1", :radius=>"20:80", crop: :fill %>
-                <%= link_to "See picture", photo_path(photo.id) %>
-                </div>
-                <% end %>
-        </div>
-        <% end %>
-    </div>
-    </div>
-</div>
-<div class="add-link">
-    <%= link_to add_photo: true do %> 
-    <div class="button fab">
-                <i class="fas fa-plus-circle"></i>
-            </div>
-            <% end %>
-    <% if current_user == @pet.user && params[:add_photo] %>
         <%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
         <%= f.input :photo, as: :file, :label => "Add"  %>
-        <%= f.submit %> 
-        <%end%>
+        <%= f.submit %>
+        <% end %>
+    </div>
+    <div class="pets-body">
+        <% @pet.photos.each do |photo| %>
+        <div class="card">
+            <%= cl_image_tag photo.key, :aspect_ratio=>"1:1", :radius=>"20:80", crop: :fill %>
+            <%= link_to "See picture", photo_path(photo.id) %>
+        </div>
+        <% end %>
+    </div>
     <% end %>
 </div>
-
-            
-        
+</div>
+</div>
+<div class="add-link">
+    <%= link_to add_photo: true do %>
+    <div class="button fab">
+        <i class="fas fa-plus-circle"></i>
+    </div>
+    <% end %>
+    <% if current_user == @pet.user && params[:add_photo] %>
+    <%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
+    <%= f.input :photo, as: :file, :label => "Add"  %>
+    <%= f.submit %>
+    <%end%>
+    <% end %>
+</div>

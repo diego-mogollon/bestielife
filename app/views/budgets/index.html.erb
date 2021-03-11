@@ -33,8 +33,4 @@
     </div>
     <%end%>
 </div>
-<%= link_to new_expense_type_budget_path do %>
-<div class="button fab">
-    <i class="fas fa-plus-circle"></i>
-</div>
-<%end%>
+<%= render 'components/fab', path: new_expense_type_budget_path %>
