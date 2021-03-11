@@ -19,6 +19,7 @@ export default class extends Controller {
   connect() {
     // check whether the global google variable is initialized
     if (typeof google != 'undefined') {
+      console.log('hello');
       this.initializeMap();
     }
   }
