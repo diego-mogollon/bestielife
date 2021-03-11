@@ -4,7 +4,7 @@
         <h5><%= budget.id ? "Update #{@expense_type.name} budget" : "Add a new #{@expense_type.name} budget"%></h5>
     </div>
     <div class="col">
-        <%= simple_form_for(budget, url: url) do |f| %>
+        <%= simple_form_for([@expense_type, budget]) do |f| %>
         <%= f.input :amount, as: :integer, required: true%>
         <%= f.input :month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]} %>
         <%= f.button :submit, "#{budget.id ? "Update" : "Add" }", class: "button button-md primary-green" %>

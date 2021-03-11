@@ -36,3 +36,5 @@ const addPhoto = () => {
   }
 }
 export { addPhoto };
+
+import "controllers"
