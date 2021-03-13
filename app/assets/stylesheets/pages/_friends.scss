@@ -6,48 +6,46 @@
     grid-template-columns: minmax(180px, 25%) auto;
     padding: 0;
     margin: 0;
+    width: auto;
 }
 .friends-management {
     height: 100vh;
     text-align: left;
-    margin-top: 20px;
+    margin: 1rem 0.5rem 1rem 1rem;
 }
 
 .friends-find {
     height: 100vh;
-    margin: 1rem 2rem 1rem 1rem;
+    margin: 1rem 0.5rem 1rem 1rem;
     text-align: center;
 }
 
 .friends-card {
-    background-color: $primary-blue;
+    border-top: solid 4px;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 10px;
-    color: $white;
+    color: $primary-blue;
 }
 
 .requests-card {
-    background-color: $primary-blue;
+    border-top: solid 4px;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 10px;
-    color: $white;
+    color: $secondary-orange;
 }
 
 .pending-card {
-    background-color: $primary-blue;
+    border-top: solid 4px;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 10px;
-    color: $white;
+    color: $secondary-orange;
+    color: $secondary-orange;
 }
 
 .find-friends-card {
-    background-color: $primary-blue;
+    border-top: solid 4px;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 10px;
-    color: $white;
+    color: $primary-green;
 }
   
