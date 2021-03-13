@@ -10,7 +10,11 @@
             <%@budgets.each do |budget|%>
             <div class="row card shadow rounded flex-row p-3 my-2">
                 <div class="col-3 mt-2">
+                    <% if Date::MONTHNAMES[budget.month.to_i].nil? %>
+                    <%= render 'components/month-card', month: budget.month[0..2] %>
+                    <% else %>
                     <%= render 'components/month-card', month: Date::MONTHNAMES[budget.month.to_i][0..2] %>
+                    <% end %>
                 </div>
                 <div class="col-9">
                     <div class="row pt-1">
