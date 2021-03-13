@@ -6,7 +6,14 @@
             <h4> Friends</h4>
                 <% if @user.friends.any? %>
                     <% @friends.each do |friend| %>
+                    <div class="profile-pic">
+                    <% if friend.pet.photos.any? %>
+                    <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
+                    <%end%>
+                    </div>
+                    <div class="container m-3 friends-pet-name">
                     <%= link_to  friend.pet.pet_name, pet_path(friend.pet) %>
+                    </div>
                 <% end %>
                 <% else %>
                     <h6>You have no Besties, go find some!</h6>
