@@ -1,4 +1,22 @@
 
+<nav class="navbar navbar-expand-lg ml-auto">
+    <ul class="navbar-nav align-self-end">
+        <li class="nav-item dropdown d-flex flex-column">
+            <a class="nav-link fas fa-bars ml-auto "href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to 'Calendar', new_user_session_path,  class: "dropdown-links" %>
+                 <%= link_to 'Expenses', new_user_session_path,  class: "dropdown-links" %>
+                 <%= link_to 'Explore', new_user_session_path,  class: "dropdown-links" %>
+                 <%= link_to 'Photos', new_user_session_path,  class: "dropdown-links" %>
+                 <%= link_to 'Friends', new_user_session_path,  class: "dropdown-links" %>
+                <%= link_to 'Chatroom', new_user_session_path, class: "dropdown-links" %>
+            </div>
+
+        </li>
+    </ul>
+</nav>
+
+<!--
 <div class="row header__home">
     <div class="container m-3 ">
         <div class="row">
@@ -7,6 +25,8 @@
         </div>
     </div>
   </div>
+ -->
+
 <div class="container home-container">
       <div class="bottom-left"> <h1> Bestie Life </h1>
         <p> Living their best life whilst you live yours</p>
@@ -50,5 +70,6 @@
             </div>
         </div>
     </section>
+
 
 
