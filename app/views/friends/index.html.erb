@@ -7,12 +7,12 @@
                 <% if @user.friends.any? %>
                     <% @friends.each do |friend| %>
                     <div class="profile-pic">
-                    <% if friend.pet.photos.any? %>
-                    <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
-                    <%end%>
+                        <% if friend.pet.photos.any? %>
+                        <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
+                        <%end%>
                     </div>
                     <div class="container m-3 friends-pet-name">
-                    <%= link_to  friend.pet.pet_name, pet_path(friend.pet) %>
+                        <%= link_to  friend.pet.pet_name, pet_path(friend.pet) %>
                     </div>
                 <% end %>
                 <% else %>
@@ -24,7 +24,14 @@
             <h4> Requests</h4>
                 <% if @user.friend_requests? %>
                     <% @requests.each do |friend| %>
-                    <%= friend.pet.pet_name%>
+                    <div class="profile-pic">
+                        <% if friend.pet.photos.any? %>
+                            <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
+                        <%end%>
+                    </div>
+                    <div class="container m-3 friends-pet-name">
+                        <%= friend.pet.pet_name %>
+                    </div>
                     <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
                     <input class='button button-sm primary-green' type=submit value='Yes!'>
                     <% end %>
@@ -53,8 +60,13 @@
         <div class="find-friends-card">
             <h4> Find Friends </h4>
                 <p><% Pet.all.each do |pet| %></p>
-                    <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name && !current_user.friends.include?(pet.user) %>
-                        <%= pet.pet_name %>
+                    <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name && !current_user.friends.include?(pet.user) && pet.photos.any? %>
+                    <div class="profile-pic">
+                        <%= image_tag(pet.photos.first, class: 'avatar rounded-circle') %>
+                    </div>
+                    <div class="containerfriends-pet-name">
+                    <%= pet.pet_name %>
+                    </div>
                         <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.user.id}) do %>
                         <input class='button button-md primary-green' type=submit value='Request'>
                         <% end %>
