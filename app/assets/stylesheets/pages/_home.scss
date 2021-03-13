@@ -1,1 +1,77 @@
 // Specific CSS for your home-page
+// test. {
+//   background-color: red;
+// }
+.container-fluid {
+  padding: 0;
+}
+
+.home-container {
+  background-image:url('../assets/bestie-home.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display:flex;
+  width:100%
+}
+
+.bottom-left {
+  position: sticky;
+  color: white;
+  padding-top: 100px;
+}
+
+.button {
+text-align: center;
+}
+
+#two {
+  margin-top: 24px;
+}
+
+.text-center__features {
+    min-height:150px;
+    margin-bottom:16px;
+    background-color:#f1f1f1c2;
+    padding:16px;
+    border-radius:8px;
+
+
+  .feature {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    height:100%;
+
+    p {
+
+      margin-bottom:0;
+    }
+  }
+
+}
+
+.features-container {
+  padding: 0 16px;
+  margin:0;
+}
+
+.header__home {
+  background-color: #5A96B8;
+  color:white;
+}
+
+.cloud-icon {
+  width:50px;
+  height:50px;
+}
+
+.dog-heart {
+  width:50px;
+  height:50px;
+}
+
+.dog-ball {
+  width:50px;
+  height:50px;
+}
