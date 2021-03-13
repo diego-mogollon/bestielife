@@ -1,6 +1,6 @@
 <div class="simple-calendar">
     <div class="row">
-        <div class="col-9">
+        <div class="col-8">
             <div class="calendar-heading  d-flex justify-content-between py-2">
                 <%= link_to calendar.url_for_previous_view do%>
                 <i class="fas fa-backward"></i>
@@ -15,8 +15,8 @@
                 <%end%>
             </div>
         </div>
-        <div class="col-3 ">
-            <%= link_to "month", events_path(month:true)%>
+        <div class="col-4 mt-2">
+            <%= link_to "Month view", events_path(month:true)%>
         </div>
     </div>
 

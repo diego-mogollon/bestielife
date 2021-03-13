@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   # end
 
   resources :expense_types do  
-    resources :expenses
+    resources :expenses, except: [:show]
     resources :budgets
   end
  
