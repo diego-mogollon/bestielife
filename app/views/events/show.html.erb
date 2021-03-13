@@ -4,21 +4,22 @@
             <%= render 'components/header', path: events_path, white_header: true %>
         </div>
         <div class="row pb-3">
-            <div class="col-5 d-flex justify-content-end">
+            <div class="col-3 mx-auto">
                 <%= image_tag('paw-logo.svg', class: 'logo') %>
             </div>
-            <div class="col-7">
-                <div class="container">
-                    <div class="row">
-                        <h6><%= @event.start_time.strftime('%d %b %y')%></h6>
-                    </div>
-                    <div class="row">
-                        <h6><%= @event.start_time.strftime('%I%P') %> - <%= @event.end_time.strftime('%I%P') %></h6>
-                    </div>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-9 mx-auto text-center">
+                <% if @event.start_time.strftime('%d %b %y') == @event.end_time.strftime('%d %b %y')%>
+                <h6><%= @event.start_time.strftime('%d %b %y')%></h6>
+                <% else %>
+                <h6><%= @event.start_time.strftime('%d %b %y')%> - <%= @event.end_time.strftime('%d %b %y') %></h6>
+                <% end %>
             </div>
+
         </div>
     </div>
+</div>
 </div>
 </div>
 <div class="row mt-5">

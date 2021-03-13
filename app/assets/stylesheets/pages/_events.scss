@@ -21,3 +21,16 @@
 .event-link {
   color: $secondary-orange;
 }
+.monthly-event-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    background-color: $primary-green;
+    // padding: $font-size-base * 0.8;
+    // border-radius: $font-size-base * 0.8;
+    & > a {
+      color: $white;
+    }
+  }
+}

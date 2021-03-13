@@ -3,10 +3,10 @@
     <div class="col">
         <%= date.to_formatted_s(:short)[0...-4] %>
     </div>
-    <ul style="margin:8px;padding:0;">
+    <ul class="monthly-event-list">
         <% meetings.each do |meeting| %>
-        <li>
-            <%= link_to "#{meeting.name[0,8]...}", event_path(meeting),  class:"event-link" %>
+        <li class="card rounded shadow p-2">
+            <%= link_to "#{meeting.name[0,8]...}", event_path(meeting) %>
         </li>
         <% end %>
     </ul>

@@ -3,8 +3,14 @@ class EventsController < ApplicationController
 
     def index
         @events = Event.all
-        @weekly_events = Event.where(start_time: Date.today.beginning_of_week..Date.today.end_of_week)
-        @monthly_events = Event.where(start_time: Date.today.beginning_of_month..Date.today.end_of_month)
+        if params[:start_date]
+            @weekly_events = Event.where(start_time: params[:start_date].to_date.beginning_of_week..params[:start_date].to_date.end_of_week)
+            @monthly_events = Event.where(start_time: params[:start_date].to_date.beginning_of_month..Date.today.end_of_month)
+        else
+            @weekly_events = Event.where(start_time: Date.today.beginning_of_week..Date.today.end_of_week)
+            @monthly_events = Event.where(start_time: Date.today.beginning_of_month..Date.today.end_of_month)
+        end
+        
     end
 
     def show
@@ -44,7 +50,7 @@ class EventsController < ApplicationController
 
     def destroy        
         @event.destroy
-        flash[:alert] = "Your current booking was cancelled"
+        flash[:alert] = "Your event was cancelled"
         redirect_to events_path
     end
 
