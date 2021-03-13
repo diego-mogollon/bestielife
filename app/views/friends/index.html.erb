@@ -35,10 +35,10 @@
                         <%= friend.pet.pet_name %>
                     </div>
                     <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
-                    <input class='button button-sm primary-green' type=submit value='Yes!'>
+                    <input class='button button-sm primary-green recieved-requests-btn' type=submit value='Yes!'>
                     <% end %>
                     <%= form_tag ({controller: 'friends', action: 'reject', method: 'post', id: friend.id}) do %>
-                    <input class='button button-sm secondary-pink' type=submit value='Nope'>
+                    <input class='button button-sm secondary-pink recieved-requests-btn' type=submit value='Nope'>
                     <% end %> 
                 <% end %>               
                 <% else %>

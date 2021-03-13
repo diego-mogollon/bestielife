@@ -3,6 +3,7 @@
   border: none;
   outline: none;
   border-radius: 5px;
+  justify-content: center;
   &.button-sm {
     width: $font-size-base * 5;
     padding: 0.5rem 0.8rem;
@@ -73,4 +74,11 @@
     & > a {
       color: $white;
     }
+  }
+
+  .recieved-requests-btn {
+    position: relative;
+    display: flex;
+    margin: 1rem;
+    width: auto;
   }
