@@ -15,7 +15,7 @@
 
 .friends-find {
     height: 100vh;
-    margin-top: 20px;
+    margin: 1rem 2rem 1rem 1rem;
     text-align: center;
 }
 
@@ -36,6 +36,14 @@
 }
 
 .pending-card {
+    background-color: $primary-blue;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    color: $white;
+}
+
+.find-friends-card {
     background-color: $primary-blue;
     padding: 1rem;
     margin-bottom: 1rem;
