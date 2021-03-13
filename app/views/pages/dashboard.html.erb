@@ -1,26 +1,26 @@
 <div class="row header header__dashboard">
     <div class="container m-3">
         <div class="row">
-            <div class="col-2"><%= image_tag('paw-logo.svg', class: 'paw-logo') %></div>
+            <div class="col-2"><%= image_tag('paw-logo.svg', class: 'logo') %></div>
             <%= render 'components/hamburger-menu', dashboard: true %>
         </div>
-        <div class="container">
-            <div class="col-4 mx-auto">
+        <div class="profile-header">
+            <div class="profile-pic">
                 <% if @pet.photos.any? %>
                 <%= image_tag(@pet.photos.first, class: 'avatar rounded-circle') %>
                 <%end%>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-4 mx-auto">
+                <div class="profile-text">
                 <h3><%= @pet.pet_name %></h3>
             </div>
         </div>
+
     </div>
 
 </div>
-<div class="dashboard d-flex flex-wrap justify-content-around">
-    <% @dashboard_categories.each do |category| %>
+<div class="row align-items-center">
+    <div class="dashboard d-flex flex-wrap justify-content-around">
+        <% @dashboard_categories.each do |category| %>
         <%= render 'components/dashboard-card', category_title: category.name, category_url: category.url %>
     <% end %>
 </div>

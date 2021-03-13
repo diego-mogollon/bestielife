@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   # end
 
   resources :expense_types do  
-    resources :expenses
+    resources :expenses, except: [:show]
     resources :budgets
   end
  
@@ -43,8 +43,12 @@ Rails.application.routes.draw do
   #   resources :favourite_places, except: [:edit, :update]
   # end
 
-  get '/places', to: 'places#index', as: 'places'
-  get '/places/show/:name', to: 'places#show', as: 'show_place' 
+  resources :places, only: [:index, :show]
+  get '/places/check_place/:id', to: 'places#check_place', as: 'check_place'
+  post '/places/add_place', to: 'places#add_place', as: 'add_place'
+
+  resources :favourite_places, only: [:index, :destroy]
+  get '/favourite_places/:id', to: 'favourite_places#add', as: 'add_to_favourites'
   
   #PHOTOS ROUTES
   resources :photos, only: [:show, :index] 

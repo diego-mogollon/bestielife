@@ -1,3 +1,44 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.photos-main {
+    height: 100%;
+    margin: 0;
+}
+.photos-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    //grid-gap: 1rem;
+    cursor: pointer;
+
+    .card {
+        
+        transition: transform 1s;
+        
+        @for $i from 1 through 6 {
+            &:nth-of-type(#{$i}) {
+                background: nth($colors, $i);
+            }  
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        } 
+
+        .info {
+            padding: 1rem;
+            //display: none;
+        }
+    
+        img {
+            width: 100%;
+        }
+
+        .desc {
+            color: gray;
+        }
+    }
+}
+
+
+

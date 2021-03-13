@@ -22,11 +22,19 @@ document.addEventListener('turbolinks:load', () => {
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import 'controllers';
-window.dispatchMapsEvent = function (...args) {
-  console.log(args);
-  //   const event = document.createEvent('Events');
-  //   event.initEvent('google-maps-callback', true, true);
-  //   event.args = args;
-  //   window.dispatchEvent(event);
-};
+
+//Code to hide submit btn in pets show
+const add = document.querySelector('#add-photo');
+const submit = document.querySelector('#submit-photo');
+
+const addPhoto = () => {
+  if (add) {
+    add.addEventListener('change', () => {
+      submit.style.display = "";
+      ;
+    })
+  }
+}
+export { addPhoto };
+
+import "controllers"

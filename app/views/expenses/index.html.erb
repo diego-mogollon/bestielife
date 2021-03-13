@@ -8,6 +8,13 @@
     <div class="col mx-auto mt-3">
         <div class="container">
             <div class="row mb-3">
+                <div class="col-8">
+                    <% if @expense_type.budgets.sum(:amount) < @expense_type.expenses.sum(:amount)%>
+                    <div class="col expense-type-alert-lg px-3 py-1 mt-2">
+                        <span>You have overshot your expenses.</span>
+                    </div>
+                    <% end %>
+                </div>
                 <div class="col-4 ml-auto">
                     <div class="row">
                         <span class="text-muted mr-1">Actuals</span> - <span class="ml-1">$<%=@expense_type.expenses.sum(:amount)%></span>
@@ -28,7 +35,7 @@
                     </thead>
                     <tbody>
                         <%@expenses.each do |expense|%>
-                        <tr style="margin-top: 10px;">
+                        <tr style="margin-top: 20px;">
                             <td class="text-muted"><%=expense.date.strftime("%m/%d/%Y")%></td>
                             <td class="text-muted"><%=expense.description%></td>
                             <td class="text-muted"><%=expense.amount%></td>
@@ -47,8 +54,4 @@
     </div>
     <%end%>
 </div>
-<%= link_to new_expense_type_expense_path do %>
-<div class="button fab">
-    <i class="fas fa-plus-circle"></i>
-</div>
-<%end%>
+<%= render 'components/fab', path: new_expense_type_expense_path %>

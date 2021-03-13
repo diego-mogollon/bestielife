@@ -7,12 +7,14 @@
     }) do |form| %>
 
         <div class="field my-5">
-            <%= form.label :search %>
+            <%= form.label "Search for an area" %>
             <%= form.search_field :search, name: nil, data: {target: "maps.field", action: "keydown->maps#preventSubmit" }, class: "form-control" %>
         </div>
 
-        <div data-target="maps.map" style="height:500px;width: 100%;"></div>
+        <div data-target="maps.map" style="height:500px;width: 100%;position:relative;">
 
+        </div>
+        <div data-target="maps.placeName" style="position:absolute;bottom: 20px;left:40%;"></div>
         <%end %>
     </div>
 </div>

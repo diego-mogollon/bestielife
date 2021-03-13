@@ -1,9 +1,14 @@
-<div class="row p-3">
-    <div class="col-6">
+<div class="row p-3 pt-4">
+    <div class="col-6 mt-1">
         <%= link_to path do %>
+        <% if defined?(white_header) %>
+        <i class="fas fa-chevron-left white"></i>
+        <% else %>
         <i class="fas fa-chevron-left"></i>
         <%end%>
+        <% end %>
     </div>
+
     <div class="col-6 ml-auto">
         <%= render 'components/hamburger-menu', dashboard: false %>
     </div>

@@ -8,6 +8,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'flatpickr/dist/flatpickr';
+@import 'simple_calendar';
 
 // Your CSS partials
 @import 'components/index';
@@ -17,4 +18,8 @@ body {
   background-color: $white;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
 }

@@ -1,23 +1,12 @@
-<div class="row mt-3">
+<div class="row mt-5 align-items-center">
     <div class="col-12">
         <%= week_calendar(number_of_weeks: 1) do |date| %>
         <div><%= date.to_formatted_s(:short)[0...-4] %></div>
+        <% events.each do |event| %>
+        <% if event.start_time.strftime("%a, %d %b %Y") == date.strftime("%a, %d %b %Y")%>
+        <%= render 'event-card', event: event, week_view: true %>
+        <% end %>
+        <% end %>
         <% end %>
     </div>
-</div>
-
-<div class="row">
-    <%if events.length.zero? %>
-    <div class="no-expense-container mx-auto mt-5">
-        <p>You do not have any events for this month</p>
-    </div>
-    <%else %>
-    <div class="col flex-column">
-        <div class="container">
-            <% events.each do |event| %>
-            <%= render 'event-card', event: event %>
-            <% end %>
-        </div>
-    </div>
-    <%end%>
 </div>

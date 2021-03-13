@@ -1,17 +1,37 @@
-.paw-logo {
+.logo {
   width: 30px;
   height: 30px;
+  &.cafe-logo,
+  &.heart-logo {
+    width: 50px;
+    height: 50px;
+  }
 }
 .header__dashboard {
   background-color: $primary-blue;
   color: $white;
+  border-bottom-left-radius: $font-size-base * 1.5;
+  border-bottom-right-radius: $font-size-base * 1.5;
+  &.green {
+    background-color: $primary-green;
+  }
 }
-.profile-pic {
-  width: 100px;
-  height: 100px;
+.dashboard {
+  gap: 10px 20px;
+  margin-top: 24px;
 }
 
-.dashboard {
- gap: 10px 20px;
- margin-top: 24px;
+.profile-header {
+  width: 100%;
+  text-align: center;
+}
+
+.profile-pic {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.profile-text {
+  position: relative;
+  align-content: center;
 }

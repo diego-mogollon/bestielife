@@ -1,0 +1,53 @@
+<div class="row header green pb-3">
+    <div class="container">
+        <div class="row my-3">
+            <%= link_to places_path do %>
+            <i class="fas fa-chevron-left white ml-4"></i>
+            <%end%>
+        </div>
+        <div class="row">
+            <div class="col-2 mx-auto">
+                <%= image_tag('heart.svg', class: 'logo heart-logo') %>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col mx-auto text-center">
+                <h5>Favourite places</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <% if @favourites.length.zero? %>
+    <div class="no-expense-container mx-auto mt-5">
+        <p>You do not have any favourite places</p>
+    </div>
+    <%else%>
+    <div class="col mx-auto mt-3">
+        <div class="container">
+            <%@favourites.each do |favourite|%>
+            <div class="row card shadow rounded flex-row p-3 my-2">
+                <div class="col-3 mt-2">
+                    <%= image_tag('coffee-cup.svg', class: 'logo cafe-logo') %>
+                </div>
+                <div class="col-9">
+                    <div class="row pt-1">
+                        <div class="col">
+                            <h6><%= favourite.place.name%></h6>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-9">
+                            <span class="text-muted"><%=  favourite.place.address%></span>
+                        </div>
+                        <div class="col-3">
+                            <%= link_to image_tag('delete.svg', class: "icon delete"), favourite_place_path(favourite), method: :delete %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%end%>
+        </div>
+    </div>
+    <%end%>
+</div>

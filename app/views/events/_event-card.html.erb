@@ -1,24 +1,35 @@
 <div class="row card shadow rounded flex-row p-3 my-2">
     <div class="col-9 mx-auto">
         <div class="container">
-            <div class="row mb-1">
-                <span class="text-muted"><%= event.description %></span>
-            </div>
-            <div class="row mb-1">
-                <%= link_to event.name, event_path(event) %>
+            <div class="row mb-2 align-items-center">
+                <% if !defined?(week_view) %>
+                <h6 class="">Description of your event</h6>
+                <% else %>
+                <h6 class="">Today's event</h6>
+                <% end %>
             </div>
             <div class="row">
-                <span><%= event.start_time.strftime('%d %b %y') %></span>
-                <span class="ml-auto"><%= event.start_time.strftime('%I%P') %></span>
+                <span class="text-muted">
+                    <% if !defined?(week_view) %>
+                    <%= event.description%>
+                    <% end %>
+                </span>
             </div>
-            <div class="row mt-4">
-                <div class="col">
-                    <%= link_to "Edit",edit_event_path(event), class: "button button-sm primary-green" %>
-                </div>
-                <div class="col">
-                    <%= link_to "Delete",event_path(event), method: :delete, class: "button button-sm secondary-pink" %>
-                </div>
+            <% if defined?(week_view) %>
+            <div class="row">
+                <%= link_to "#{event.name[0..10]}...", event_path(event), class: "event-link" %>
+            </div>
+            <%end%>
+        </div>
+
+        <% if !defined?(week_view) %>
+        <div class="row">
+            <div class="col-2 ml-auto d-flex">
+                <%= link_to image_tag('edit.svg', class: "icon edit mr-2"), edit_event_path(event) %>
+                <%= link_to image_tag('delete.svg', class: "icon delete"), event_path(event), method: :delete %>
             </div>
         </div>
+        <% end %>
     </div>
+</div>
 </div>
