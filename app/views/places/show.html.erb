@@ -1,4 +1,4 @@
-<div class="row header border pb-3">
+<div class="row header pb-3">
     <div class="container">
         <div class="row my-3">
             <%= render 'components/header', path: places_path, white_header: true %>
@@ -24,7 +24,7 @@
         <%end%>
     </div>
 </div>
-<div class="row my-3">
+<div class="row my-3 mx-2">
     <div class="col-6">
         <i class="fas fa-phone"></i>
         <% if @location.phone.nil? %>
@@ -40,12 +40,10 @@
     </div>
 </div>
 <div class="row">
-    <div class="col">
-        <%= image_tag(@location.photo) %>
-    </div>
+    <%= image_tag(@location.photo, class: "cafe-image mx-auto w-75") %>
 </div>
-<div class="row mt-2">
-    <div class="col-4">
+<div class="row my-3 mx-2">
+    <div class="col ml-auto">
         <%= link_to add_to_favourites_path(@location) do %>
         <% if @is_favourite %>
         <i class="fas fa-heart"></i>
@@ -55,11 +53,11 @@
         <%end%>
     </div>
 </div>
-<div class="row mt-4">
+<div class="row my-5 mx-2">
     <div class="col-6">
-        <%= link_to 'See your favourites', favourite_places_path, class: "button button-sm primary-green" %>
+        <%= link_to 'Your favourites', favourite_places_path, class: "button button-sm primary-green" %>
     </div>
     <div class="col-6">
-        <%= link_to 'Find a new place', places_path, class: "button button-sm secondary-pink" %>
+        <%= link_to 'Find a cafe', places_path, class: "button button-sm secondary-pink" %>
     </div>
 </div>
