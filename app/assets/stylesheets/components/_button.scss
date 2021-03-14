@@ -79,5 +79,11 @@
   .recieved-requests-btn {
     position: relative;
     display: flex;
-    margin: 0.5rem auto;
+    margin: 1rem auto;
+    &.friends-yes-btn{
+      margin: auto;
+    }
+    &.friends-no-btn{
+      margin-bottom: 1.5rem;
+    }
   }

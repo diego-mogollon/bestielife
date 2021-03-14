@@ -25,6 +25,9 @@
     padding: 1rem;
     margin-bottom: 1rem;
     color: $primary-blue;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 .requests-card {
@@ -42,7 +45,9 @@
     padding: 1rem;
     margin-bottom: 1rem;
     color: $secondary-orange;
-    color: $secondary-orange;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 .find-friends-card {
