@@ -13,7 +13,7 @@
                         <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
                         <%end%>
                     </div>
-                    <div class="container m-3 friends-pet-name">
+                    <div class="container m-3">
                         <%= link_to  friend.pet.pet_name, pet_path(friend.pet) %>
                     </div>
                 <% end %>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="requests-card">
-            <h4> Requests</h4>
+            <h4> Recieved Requests</h4>
                 <% if @user.friend_requests? %>
                     <% @requests.each do |friend| %>
                     <div class="profile-pic">
@@ -31,14 +31,14 @@
                             <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
                         <%end%>
                     </div>
-                    <div class="container m-3 friends-pet-name">
+                    <div class="container friends-pet-name">
                         <%= friend.pet.pet_name %>
                     </div>
                     <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
-                    <input class='button button-sm primary-green' type=submit value='Yes!'>
+                    <input class='button button-sm primary-green recieved-requests-btn friends-yes-btn' type=submit value='Yes!'>
                     <% end %>
                     <%= form_tag ({controller: 'friends', action: 'reject', method: 'post', id: friend.id}) do %>
-                    <input class='button button-sm secondary-pink' type=submit value='Nope'>
+                    <input class='button button-sm secondary-pink recieved-requests-btn friends-no-btn' type=submit value='Nope'>
                     <% end %> 
                 <% end %>               
                 <% else %>
@@ -47,10 +47,17 @@
         </div>
 
         <div class="pending-card">
-                <h4> Pending</h4>
+                <h4> Sent Requests </h4>
                     <% if @user.requested_friends? %>
                         <% @pending.each do |friend| %>
-                        <%= friend.pet.pet_name %>
+                            <div class="profile-pic">
+                            <% if friend.pet.photos.any? %>
+                                <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
+                            <%end%>
+                        </div>
+                        <div class="container friends-pet-name">
+                            <%= friend.pet.pet_name %>
+                        </div>
                         <% end %>
                     <% else %>
                         <h6>Nothing, nada, zilt</h6>
@@ -66,7 +73,7 @@
                     <div class="profile-pic">
                         <%= image_tag(pet.photos.first, class: 'avatar rounded-circle') %>
                     </div>
-                    <div class="containerfriends-pet-name">
+                    <div>
                     <%= pet.pet_name %>
                     </div>
                         <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.user.id}) do %>
