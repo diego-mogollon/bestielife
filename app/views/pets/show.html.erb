@@ -1,36 +1,21 @@
 <div class="pets-main">
     <%= render 'components/header', path: root_path %>
     <div class="profile-header">
-    <div class="profile-pic">
-        <% if @pet.photos.any? %>
-        <%= image_tag(@pet.photos.first, class: 'avatar rounded-circle') %>
-        <%end%>
-        <div class="profile-text">
+        <div class="profile-pic">
+            <% if @pet.photos.any? %>
+                <%= image_tag(@pet.photos.first, class: 'avatar rounded-circle') %>
+            <%end%>
+            <div class="profile-text">
                 <h3><%= @pet.pet_name %></h3>
             </div>
-    </div>
-    <div class="photos-add-remove">
-    <div class="d-flex justify-content-around">
-    <% if current_user == @pet.user %>
-
-        <%= simple_form_for :pet, url: add_picture_pet_path, method: :post do |f| %>
-        <%= f.input :photo, required: false, input_html: { class: 'd-none', id: 'add-photo'}, label_html: {class: 'add-photo-button'}, as: :file, :label => "📷"%>
-        <%= f.submit input_html: { class: 'd-none', id: 'submit-photo'}, label_html: { class: 'submit-photo-button'}, label: 'Submit' %>  
-    <% end %>
-    <% end %>
-    </div>
-    </div>
+        </div>
         <div class="pets-body">
             <% @pet.photos.each do |photo| %>
                 <div class="card">
                 <%= cl_image_tag photo.key, :aspect_ratio=>"1:1", :radius=>"20:80", crop: :fill %>
                 <%= link_to "See picture", photo_path(photo.id) %>
-                </div>
-                <% end %>
         </div>
+            <% end %>
+    </div>
 </div>
-<div class="container">
-<div class="d-flex m-12">
 <%= render 'components/fab', path: new_photo_path %>
-</div>
-</div>
