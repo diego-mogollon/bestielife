@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   get '/favourite_places/:id', to: 'favourite_places#add', as: 'add_to_favourites'
   
   #PHOTOS ROUTES
-  resources :photos, only: [:show, :index] 
+  resources :photos, only: [:show, :index, :new]
 
   #CHATROOM ROUTES
   resources :chatrooms, only: [:show, :index] do 
