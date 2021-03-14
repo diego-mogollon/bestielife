@@ -3,13 +3,14 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .pets-main {
     height: 100%;
-    margin: 0;
+    margin: 1rem auto;
+    width: 90%;
 }
 .pets-body {
     display: grid;
     object-fit: fill; 
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
     
     cursor: pointer;
     .card { 
