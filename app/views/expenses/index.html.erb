@@ -1,4 +1,10 @@
-<%= render 'components/header', path: expense_types_path %>
+<div class="categories-header">
+    <%= render 'components/header', path: expense_types_path %>
+    <h3 id="categories-text"">
+        Expenses
+</div>
+    </h3>
+<div class="calendar-main">
 <div class="row">
     <% if @expenses.length.zero? %>
     <div class="no-expense-container mx-auto mt-5">

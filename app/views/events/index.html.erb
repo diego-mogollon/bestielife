@@ -1,9 +1,9 @@
-<div class="categories_header">
-<%= render 'components/header', path: root_path %>
-<h3 id="calendar-header">
-Calendar
+<div class="categories-header">
+    <%= render 'components/header', path: root_path %>
+    <h3 id="categories-text">
+        Calendar
 </div>
-</h3>
+    </h3>
 <div class="calendar-main">
 <% if params[:month] %>
 <%= render "month", events: @monthly_events %>
