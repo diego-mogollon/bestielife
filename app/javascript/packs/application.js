@@ -24,17 +24,4 @@ document.addEventListener('turbolinks:load', () => {
 
 
 //Code to hide submit btn in pets show
-const add = document.querySelector('#add-photo');
-const submit = document.querySelector('#submit-photo');
-
-const addPhoto = () => {
-  if (add) {
-    add.addEventListener('change', () => {
-      submit.style.display = "";
-      ;
-    })
-  }
-}
-export { addPhoto };
-
 import "controllers"

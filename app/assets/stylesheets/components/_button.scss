@@ -44,38 +44,6 @@
     }
   }
 }
-
-.add-photo-button {
-  color: $white;
-  border: 2px $primary-green;
-  border-style: solid;
-  border-radius: 5px;
-  width: $font-size-base * 5;
-  padding: 0;
-  text-align: center;
-  margin-bottom: -3rem;
-  
-  & > a {
-    color: $white;
-  }
-  }
-
-  .submit-photo-button {
-    color: $primary-green;
-    background-color: $white;
-    border: 2px $primary-green;
-    border-style: solid;
-    border-radius: 5px;
-    width: $font-size-base * 5;
-    padding: 0;
-    text-align: center;
-    margin-bottom: -3rem;
-    display: none; 
-    & > a {
-      color: $white;
-    }
-  }
-
   .recieved-requests-btn {
     position: relative;
     display: flex;
@@ -85,5 +53,17 @@
     }
     &.friends-no-btn{
       margin-bottom: 1.5rem;
+    }
+  }
+
+  .upload-photo {
+    border: 1px solid #d3d3d3;
+    padding: 16px 24px;
+    cursor: pointer;
+    font-weight: 500;
+    background: white;
+    border-radius: 10px;
+    &.submit {
+      color: $primary-green
     }
   }
