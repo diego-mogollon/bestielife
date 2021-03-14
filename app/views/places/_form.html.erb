@@ -5,8 +5,7 @@
         controller: :maps
         # action: "submit->maps#initializeMap" 
     }) do |form| %>
-
-        <div class="field my-5">
+        <div class="field search">
             <%= form.label "Search for an area" %>
             <%= form.search_field :search, name: nil, data: {target: "maps.field", action: "keydown->maps#preventSubmit" }, class: "form-control" %>
         </div>

@@ -1,6 +1,12 @@
 // Place all the styles related to the expenses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.expenses-main {
+  margin: 2rem 2rem;
+  width: auto;
+}
+
 h5 {
   color: $primary-blue;
 }

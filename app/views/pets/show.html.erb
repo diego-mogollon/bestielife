@@ -1,14 +1,20 @@
-<div class="pets-main">
+<div class="categories-header photos-header">
     <%= render 'components/header', path: root_path %>
-    <div class="profile-header">
-        <div class="profile-pic">
-            <% if @pet.photos.any? %>
-                <%= image_tag(@pet.photos.first, class: 'avatar rounded-circle') %>
-            <%end%>
+    <h3 class="categories-text"">
+    Photos
+    </h3>
+        <div class="profile-header">
+            <div class="profile-pic">
+                <% if @pet.photos.any? %>
+                    <%= image_tag(@pet.photos.first, class: 'avatar rounded-circle') %>
+                <%end%>
+            </div>
             <div class="profile-text">
                 <h3><%= @pet.pet_name %></h3>
             </div>
         </div>
+</div>
+<div class="pets-main">
         <div class="pets-body">
             <% @pet.photos.each do |photo| %>
                 <div class="card">
@@ -17,6 +23,5 @@
                 <% end %>    
         </div>
             <% end %>
-    </div>
-</div>
 <%= render 'components/fab', path: new_photo_path %>
+</div>

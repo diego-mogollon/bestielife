@@ -1,7 +1,14 @@
-<%= render 'components/header', path: root_path %>
-<% if params[:month] %>
-<%= render "month", events: @monthly_events %>
-<% else %>
-<%= render "week", events: @weekly_events %>
-<% end %>
-<%= render 'components/fab', path: new_event_path %>
+<div class="categories-header">
+    <%= render 'components/header', path: root_path %>
+    <h3 class="categories-text">
+        Calendar
+</div>
+    </h3>
+<div class="calendar-main">
+    <% if params[:month] %>
+        <%= render "month", events: @monthly_events %>
+    <% else %>
+        <%= render "week", events: @weekly_events %>
+    <% end %>
+        <%= render 'components/fab', path: new_event_path %>
+</div>
