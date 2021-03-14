@@ -32,6 +32,9 @@
     padding: 1rem;
     margin-bottom: 1rem;
     color: $secondary-orange;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 .pending-card {
@@ -47,4 +50,10 @@
     padding: 1rem;
     margin-bottom: 1rem;
     color: $primary-green;
+}
+
+.friends-pet-name{
+    position: relative;
+    display: flex;
+    justify-content: center;
 }

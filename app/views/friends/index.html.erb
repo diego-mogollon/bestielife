@@ -31,7 +31,7 @@
                             <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
                         <%end%>
                     </div>
-                    <div class="container m-3">
+                    <div class="container friends-pet-name">
                         <%= friend.pet.pet_name %>
                     </div>
                     <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
