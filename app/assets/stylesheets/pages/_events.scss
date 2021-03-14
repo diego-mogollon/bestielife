@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.calendar-main {
+  margin: 0 1.5rem;
+}
+
 .event-name {
   font-size: $font-size-base * 0.8;
 }
@@ -33,4 +37,11 @@
       color: $white;
     }
   }
+}
+
+#calendar-header{
+  color: #ffffff;
+  margin: 1rem 3rem;
+  position: relative;
+  justify-content: space-around;
 }
