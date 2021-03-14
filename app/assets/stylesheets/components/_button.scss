@@ -67,10 +67,9 @@
     border-style: solid;
     border-radius: 5px;
     width: $font-size-base * 5;
-    padding: 0;
+    padding: 16px 24px;
     text-align: center;
     margin-bottom: -3rem;
-    display: none; 
     & > a {
       color: $white;
     }
@@ -85,5 +84,17 @@
     }
     &.friends-no-btn{
       margin-bottom: 1.5rem;
+    }
+  }
+
+  .upload-photo {
+    border: 1px solid #d3d3d3;
+    padding: 16px 24px;
+    cursor: pointer;
+    font-weight: 500;
+    background: white;
+    border-radius: 10px;
+    &.submit {
+      color: $primary-green
     }
   }
