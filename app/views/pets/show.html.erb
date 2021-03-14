@@ -12,9 +12,11 @@
         <div class="pets-body">
             <% @pet.photos.each do |photo| %>
                 <div class="card">
+                <%= link_to photo_path(photo.id) do %>
                 <%= cl_image_tag photo.key, :aspect_ratio=>"1:1", :radius=>"20:80", crop: :fill %>
-                <%= link_to "See picture", photo_path(photo.id) %>
+                <% end %>    
         </div>
+        
             <% end %>
     </div>
 </div>
