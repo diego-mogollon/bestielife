@@ -5,7 +5,7 @@
         <%= cl_image_tag @photo.key, width: 100 %>
         <% if current_user == @pet.user %>
             <div class="info"> 
-            <%= link_to "delete", remove_picture_pet_path(@photo.id), method: :delete %>
+            <%= link_to "🗑️", remove_picture_pet_path(@photo.id), method: :delete, data: { confirm: " 🗑️ Delete this picture?" } %>
         <% end %>
         </div>
     </div>
