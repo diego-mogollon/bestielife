@@ -1,10 +1,16 @@
-<%= render 'components/header', path: root_path %>
-<h1> This is the main Chatroom </h1>
-<div class="chatroom-body">
-<% @chatrooms.each do |chatroom| %>
-<div class="chatroom-card">
-<h3><%= chatroom.name %></h3>
-<%= link_to "Enter", chatroom_path(chatroom), class:'button button-sm primary-green'%>
+<div class="categories-header">
+    <%= render 'components/header', path: root_path %>
+    <h3 class="categories-text"">
+    Chatrooms
+    </h3>
 </div>
-<% end %>
+<div class="chatroom-main">
+    <div class="chatroom-body">
+        <% @chatrooms.each do |chatroom| %>
+        <div class="chatroom-card">
+            <h3><%= chatroom.name %></h3>
+            <%= link_to "Enter", chatroom_path(chatroom), class:'button button-sm primary-green'%>
+        </div>
+        <% end %>
+    </div>
 </div>

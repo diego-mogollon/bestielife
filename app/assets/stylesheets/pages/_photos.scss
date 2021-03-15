@@ -5,6 +5,12 @@
     height: 100%;
     margin: 0;
 }
+.photos-header {
+    height: 350px;
+    padding-bottom: 0;
+    margin-bottom: 2rem;
+}
+
 .photos-body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));

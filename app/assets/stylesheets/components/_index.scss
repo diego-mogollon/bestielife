@@ -6,3 +6,20 @@
 @import 'button';
 @import 'hamburger-menu';
 @import 'month-card';
+
+h1,h2, h3, h4 {
+    margin: 1rem auto;
+}
+
+h5, h6 {
+    margin: 0.5rem auto;
+}
+
+.categories-header {
+    background-color: $primary-green;
+    color: $white;
+    border-bottom-left-radius: $font-size-base * 1.5;
+    border-bottom-right-radius: $font-size-base * 1.5;
+    height: 180px;
+    display:flexbox;
+  }

@@ -3,18 +3,63 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .friends-main {
     display: grid;
-    grid-template-columns: minmax(180px, 25%) auto;
+    grid-template-columns: minmax(160px, 25%) auto;
     padding: 0;
-    margin: 0;
+    margin: 2.5rem 0 0 0;
+    width: auto;
 }
 .friends-management {
     height: 100vh;
     text-align: left;
-    margin-top: 20px;
+    margin: 1rem 0.5rem 1rem 1rem;
 }
 
 .friends-find {
     height: 100vh;
-    margin-top: 20px;
+    margin: 1rem 0.5rem 1rem 1rem;
     text-align: center;
+}
+
+.friends-card {
+    border-top: solid 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: $primary-blue;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.requests-card {
+    border-top: solid 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: $secondary-orange;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.pending-card {
+    border-top: solid 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: $secondary-orange;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.find-friends-card {
+    border-top: solid 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: $primary-green;
+}
+
+.friends-pet-name{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem auto;
 }

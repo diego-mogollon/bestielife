@@ -1,0 +1,15 @@
+<div class="photos-main">
+<%= render 'components/header', path: pet_path(@pet) %>
+<div class="photos-add-remove">
+<div class="d-flex justify-content-around">
+<% if current_user == @pet.user %>
+    <%= simple_form_for @pet, url: add_picture_pet_path(@pet), method: :post do |f| %>
+    <%= f.input :photo, required: false, input_html: { class: 'd-none', id: 'photo-input'}, label_html: {class: 'upload-photo'}, as: :file, :label => "📸 Upload"%>
+    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+    <%= f.button_button t(".submit"), name: "submit", input_html: { id: 'none'}, class: "upload-photo submit" %>
+<% end %>
+<% end %>
+</div>
+</div>
+    </div>
+

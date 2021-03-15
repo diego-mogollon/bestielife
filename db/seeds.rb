@@ -4,10 +4,15 @@ require "open-uri"
 puts "cleaning up database"
 # Item.destroy_all
 User.destroy_all
+Pet.destroy_all
 DashboardCategory.destroy_all
 ExpenseType.destroy_all
+Expense.destroy_all
 Place.destroy_all
 FavouritePlace.destroy_all
+Event.destroy_all
+Chatroom.destroy_all
+
 # Category.destroy_all
 puts "database is clean"
 
@@ -16,7 +21,7 @@ user_1 = User.create!(first_name: "test", last_name: "tester", email: "user@user
 user_2 = User.create!(first_name: "test2", last_name: "tester2", email: "user2@user.com", password: 222222, nickname: "test2")
 user_3 = User.create!(first_name: "test3", last_name: "tester3", email: "user3@user.com", password: 333333)
 user_4 = User.create!(first_name: "test4", last_name: "tester4", email: "user4@user.com", password: 444444)
-user_5 = User.create!(first_name: "tes5", last_name: "tester5", email: "use5@user.com", password: 555555)
+user_5 = User.create!(first_name: "tes5", last_name: "tester5", email: "user5@user.com", password: 555555)
 user_6 = User.create!(first_name: "test6", last_name: "tester6", email: "user6@user.com", password: 666666)
 user_7 = User.create!(first_name: "test7", last_name: "tester7", email: "user7@user.com", password: 777777)
 user_8 = User.create!(first_name: "test8", last_name: "tester8", email: "user8@user.com", password: 888888)

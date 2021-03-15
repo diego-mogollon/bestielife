@@ -13,12 +13,13 @@
 .fa-bars:focus {
   color: $white;
   &.page-header {
-    color: $primary-blue;
+    color: $white;
   }
 }
 .dropdown-links {
   color: $black;
   font-size: $font-size-base * 0.8;
+  display:block;
 }
 .dropdown-menu {
   border-radius: 5px;

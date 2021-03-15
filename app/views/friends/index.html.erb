@@ -1,50 +1,90 @@
-<%= render 'components/header', path: root_path %>
-<h1><%=@user.pet.pet_name %>'s Besties</h1>
+<div class="categories-header">
+    <%= render 'components/header', path: root_path %>
+    <h3 class="categories-text"">
+    <%=@user.pet.pet_name %>'s Besties
+    </h3>
+</div>  
 <div class="friends-main">
-<div class="section friends-management">
-<h4> Friends</h4>
-<% if @user.friends.any? %>
-    <% @friends.each do |friend| %>
-    <%= link_to  friend.pet.pet_name, pet_path(friend.pet) %>
-    <% end %>
-    <% else %>
-    <h6>You have no Besties, go find some!</h6>
-<% end %>
-    
-    <h4> Requests</h4>
-    <% if @user.friend_requests? %>
-    <% @requests.each do |friend| %>
-        <%= friend.pet.pet_name%>
-        <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
-            <input class='button button-sm primary-green' type=submit value='Yes!'>
-            <% end %>
-            <%= form_tag ({controller: 'friends', action: 'reject', method: 'post', id: friend.id}) do %>
-                <input class='button button-sm secondary-pink' type=submit value='Nope'>
-                <% end %>
-                <% end %>
-                
-                <% else %>
-                <h6>Woof, nothing to see here</h6>
-                <% end %>
-                <h4> Pending</h4>
-                <% if @user.requested_friends? %>
-                <% @pending.each do |friend| %>
-                    <%= friend.pet.pet_name %>
-                    <% end %>
-                    <% else %>
-                    <h6>Nothing, nada, zilt</h6>
-                    <% end %>
+    <div class="section friends-management">
+        <div class="friends-card">
+            <h4> Friends</h4>
+                <% if @user.friends.any? %>
+                    <% @friends.each do |friend| %>
+                    <div class="profile-pic">
+                        <% if friend.pet.photos.any? %>
+                        <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
+                        <%end%>
                     </div>
-                    <div class="section friends-find">
-                    <h4> Find Friends </h4>
-                    <p><% Pet.all.each do |pet| %></p>
-                        <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name && !current_user.friends.include?(pet.user) %>
-                        <%= pet.pet_name %>
+                    <div class="container m-3">
+                        <%= link_to  friend.pet.pet_name, pet_path(friend.pet) %>
+                    </div>
+                <% end %>
+                <% else %>
+                    <h6>You have no Besties, go find some!</h6>
+                <% end %>
+        </div>
+
+        <div class="requests-card">
+            <h4> Recieved Requests</h4>
+                <% if @user.friend_requests? %>
+                    <% @requests.each do |friend| %>
+                    <div class="profile-pic">
+                        <% if friend.pet.photos.any? %>
+                            <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
+                        <%end%>
+                    </div>
+                    <div class="container friends-pet-name">
+                        <%= friend.pet.pet_name %>
+                    </div>
+                    <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
+                    <input class='button button-sm primary-green recieved-requests-btn friends-yes-btn' type=submit value='Yes!'>
+                    <% end %>
+                    <%= form_tag ({controller: 'friends', action: 'reject', method: 'post', id: friend.id}) do %>
+                    <input class='button button-sm secondary-pink recieved-requests-btn friends-no-btn' type=submit value='Nope'>
+                    <% end %> 
+                <% end %>               
+                <% else %>
+                    <h6> Woof, nothing to see here</h6>
+                <% end %>
+        </div>
+
+        <div class="pending-card">
+                <h4> Sent Requests </h4>
+                    <% if @user.requested_friends? %>
+                        <% @pending.each do |friend| %>
+                            <div class="profile-pic">
+                            <% if friend.pet.photos.any? %>
+                                <%= image_tag(friend.pet.photos.first, class: 'avatar rounded-circle') %>
+                            <%end%>
+                        </div>
+                        <div class="container friends-pet-name">
+                            <%= friend.pet.pet_name %>
+                        </div>
+                        <% end %>
+                    <% else %>
+                        <h6>Nothing, nada, zilt</h6>
+                    <% end %>
+        </div>
+    </div>
+                    
+    <div class="section friends-find">
+        <div class="find-friends-card">
+            <h4> Find Friends </h4>
+                <p><% Pet.all.each do |pet| %></p>
+                    <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name && !current_user.friends.include?(pet.user) && pet.photos.any? %>
+                    <div class="profile-pic">
+                        <%= image_tag(pet.photos.first, class: 'avatar rounded-circle') %>
+                    </div>
+                    <div>
+                    <%= pet.pet_name %>
+                    </div>
                         <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.user.id}) do %>
-                            <input class='button button-md primary-green' type=submit value='Request'>
-                            <% end %>
-                            <% end %>
-                            <% end %>
-                            </div>
+                        <input class='button button-md primary-green' type=submit value='Request'>
+                        <% end %>
+                    <% end %>
+                <% end %>
+        </div>
+    </div>
+</div>
                             
                             
