@@ -23,24 +23,26 @@
         <p>You do not have any favourite places</p>
     </div>
     <%else%>
-    <div class="col mx-auto mt-3">
+    <div class="col-10 mx-auto my-3">
         <div class="container">
             <%@favourites.each do |favourite|%>
-            <div class="row card shadow rounded flex-row p-3 my-2">
-                <div class="col-3 mt-2">
+            <div class="row card shadow rounded flex-row py-3">
+                <div class="col-3 p-3">
                     <%= image_tag('coffee-cup.svg', class: 'logo cafe-logo') %>
                 </div>
                 <div class="col-9">
-                    <div class="row pt-1">
+                    <div class="row">
                         <div class="col">
                             <h6><%= favourite.place.name%></h6>
                         </div>
                     </div>
-                    <div class="row mt-4">
-                        <div class="col-9">
+                    <div class="row">
+                        <div class="col">
                             <span class="text-muted"><%=  favourite.place.address%></span>
                         </div>
-                        <div class="col-3">
+                    </div>
+                    <div class="row">
+                        <div class="col-3 ml-auto">
                             <%= link_to image_tag('delete.svg', class: "icon delete"), favourite_place_path(favourite), method: :delete %>
                         </div>
                     </div>

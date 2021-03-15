@@ -22,6 +22,7 @@
 }
 .fa-heart {
   color: $red;
+  font-size: $font-size-base * 1.5;
 }
 .icon {
   width: $font-size-base * 2;
@@ -36,4 +37,21 @@
     width: $font-size-base * 1.2;
     height: $font-size-base * 1.2;
   }
+}
+.map {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+}
+
+.place-search-input {
+  position: absolute;
+  top: 20px;
+  left: 40%;
+  z-index: 2;
+}
+.cafe-image {
+  border-radius: $font-size-base * 2;
 }
