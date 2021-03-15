@@ -5,8 +5,21 @@
     height: 100%;
     margin: 0;
 }
+
+.photo-show-info {
+    display: flex;
+    justify-content:last baseline;
+    padding: 10px;
+    
+}
+
+.photos-show-header {
+    padding-bottom: 0;
+    margin-bottom: 2rem;
+}
+
 .photos-header {
-    height: 350px;
+    height: 360px;
     padding-bottom: 0;
     margin-bottom: 2rem;
 }
@@ -18,24 +31,15 @@
     cursor: pointer;
 
     .card {
-        
         transition: transform 1s;
-        
-        @for $i from 1 through 6 {
-            &:nth-of-type(#{$i}) {
-                background: nth($colors, $i);
-            }  
-        }
-
         &:hover {
             transform: translateY(-10px);
         } 
-
         .info {
             padding: 1rem;
             //display: none;
         }
-    
+
         img {
             width: 100%;
         }
