@@ -1,5 +1,35 @@
+<% if defined?(modal) %>
+<%= link_to '#photoPreviewModal', data: {toggle: 'modal'} do %>
+<div class="button fab">
+    <%= image_tag('plus.svg') %>
+</div>
+<% end %>
+<% else %>
 <%= link_to path do %>
 <div class="button fab">
     <%= image_tag('plus.svg') %>
 </div>
 <%end%>
+<% end %>
+
+<div class="container">
+    <div class="modal fade" id="photoPreviewModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between">
+                    <h5 class="modal-title">Upload a photo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <%= simple_form_for obj, url: url, method: :post do |f| %>
+                    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+                    <div class="modal-footer d-flex justify-content-around">
+                        <%= f.input :photo, required: false, input_html: { class: 'd-none', id: 'photo-input'}, label_html: {class: 'button button-sm primary-green'}, as: :file, :label => "Upload"%>
+                        <%= f.button_button t(".submit"), name: "submit", input_html: { id: 'none'}, class: "button button-sm primary-blue" %>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

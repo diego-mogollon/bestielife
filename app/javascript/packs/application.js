@@ -7,12 +7,16 @@ require('@rails/ujs').start();
 require('turbolinks').start();
 require('@rails/activestorage').start();
 require('channels');
+
 import 'bootstrap';
 import { initFlatpickr } from '../plugins/flatpickr';
 import { initChatroomCable } from '../channels/chatroom_channel';
+import { previewImageOnFileSelect } from '../components/photo_preview';
+
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initChatroomCable();
+  previewImageOnFileSelect();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -22,6 +26,5 @@ document.addEventListener('turbolinks:load', () => {
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
 //Code to hide submit btn in pets show
-import "controllers"
+import 'controllers';
