@@ -7,8 +7,8 @@
 }
 
 .search {
-  margin-top: 0;
-  margin-bottom: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .place-header {
@@ -43,12 +43,12 @@
   left: 0;
   width: 100%;
   height: 1000px;
-  position: absolute;
+  position: relative;
 }
 
 .place-search-input {
-  position: absolute;
-  top: 20px;
+  position: relative;
+  top: 1rem;
   left: 40%;
   z-index: 2;
 }
