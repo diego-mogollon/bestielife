@@ -11,6 +11,11 @@
   }
 }
 
+.dashboard-body {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
 .header__dashboard {
   margin-bottom: 1.5rem;
   padding: 2rem 0;
@@ -24,10 +29,24 @@
   }
 }
 
+.dashboard-footer {
+  background-color: $primary-blue;
+  width: 100%;
+  height: 80px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  overflow: hidden;
+}
+
 .dashboard {
-  gap: 2rem 2rem;
+  gap: 0.5rem 2rem;
   margin: 1rem auto;
   width: auto;
+  min-height: 50vh;
+  max-height: 100vh;
 }
 
 .profile-header {
