@@ -20,13 +20,17 @@
 }
 
 .dashboard {
-  gap: 10px 20px;
-  margin-top: 24px;
+  gap: 2rem 2rem;
+  margin: 1rem auto;
+  width: auto;
 }
 
 .profile-header {
+  position: relative;
   width: 100%;
   text-align: center;
+  margin: 1rem auto;
+  width: auto;
 }
 
 .profile-pic {
