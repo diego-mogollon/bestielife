@@ -19,9 +19,22 @@
 .dropdown-links {
   color: $black;
   font-size: $font-size-base * 0.8;
-  display:block;
+  display: block;
 }
 .dropdown-menu {
   border-radius: 5px;
   padding: $font-size-base;
+}
+.fa-calendar-alt,
+.fa-dollar-sign,
+.fa-map-marked-alt,
+.fa-camera-retro,
+.fa-dog,
+.fa-comments,
+.fa-sign-out-alt {
+  color: $secondary-orange;
+  font-size: $font-size-base;
+  & + span {
+    font-size: $font-size-base;
+  }
 }

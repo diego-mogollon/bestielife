@@ -3,7 +3,30 @@
         <li class="nav-item dropdown d-flex flex-column">
             <a class="nav-link fas fa-bars ml-auto <%= dashboard ? '' : 'page-header' %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-links" %>
+                <% if !dashboard %>
+                <%= link_to(events_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-calendar-alt mr-3"></i><span class="text-muted">Calendar</span>
+                <% end %>
+                <%= link_to(expense_types_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-dollar-sign mr-3"></i><span class="text-muted">Expenses</span>
+                <% end %>
+                <%= link_to(places_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-map-marked-alt mr-3"></i><span class="text-muted">Explore</span>
+                <% end %>
+                <%= link_to(pet_path(current_user.pet),  class: "dropdown-links py-2") do %>
+                <i class="fas fa-camera-retro mr-3"></i><span class="text-muted">Photos</span>
+                <% end %>
+                <%= link_to(friends_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-dog mr-3"></i><span class="text-muted">Friends</span>
+                <% end %>
+                <%= link_to(chatrooms_path,  class: "dropdown-links py-2") do %>
+                <i class="fas  fa-comments mr-3"></i><span class="text-muted">Chatroom</span>
+                <% end %>
+                <% end %>
+                <%= link_to(destroy_user_session_path,  method: :delete, class: "dropdown-links py-2") do %>
+                <i class="fas fa-sign-out-alt mr-3"></i><span class="text-muted">Logout</span>
+                <% end %>
+
             </div>
         </li>
     </ul>
