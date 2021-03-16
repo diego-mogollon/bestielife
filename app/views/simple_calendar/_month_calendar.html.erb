@@ -3,11 +3,11 @@
         <div class="col-8">
             <div class="calendar-heading d-flex justify-content-between py-2">
                 <%= link_to calendar.url_for_previous_view do%>
-                <i class="fas fa-backward"></i>
+                <i class="fas fa-backward mt-2"></i>
                 <%end%>
                 <h5 class="calendar-title"><%= t('date.month_names')[start_date.month] %></h5>
                 <%= link_to calendar.url_for_next_view do%>
-                <i class="fas fa-forward"></i>
+                <i class="fas fa-forward mt-2"></i>
                 <%end%>
             </div>
         </div>

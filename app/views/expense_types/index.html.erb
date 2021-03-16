@@ -1,9 +1,9 @@
 <div class="categories-header">
     <%= render 'components/header', path: root_path %>
-    <h3 class="categories-text">
-        Expenses
+    <div class="row">
+        <h3 class="categories-text  mx-auto">Expense Categories</h3>
+    </div>
 </div>
-</h3>
 <div class="expenses-main"></div>
 <% @expense_types.each do |expense_type| %>
 <div class="row card my-2 shadow border flex-row mx-auto">
@@ -25,7 +25,7 @@
                 <% end %>
             </div>
             <div class="row">
-                <div class="col expense-type-links">
+                <div class="col-6 expense-type-links">
                     <div class="row">
                         <span class="text-muted mr-1">Actuals</span> - <span class="ml-1">$<%=expense_type.expenses.sum(:amount)%></span>
                     </div>
@@ -33,7 +33,7 @@
                         <%= link_to "View",  expense_type_expenses_path(expense_type) %>
                     </div>
                 </div>
-                <div class="col expense-type-links">
+                <div class="col-6 expense-type-links">
                     <div class="row">
                         <span class="text-muted mr-1">Budget</span> - <span class="ml-1">$<%=expense_type.budgets.sum(:amount)%></span>
                     </div>

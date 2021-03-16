@@ -1,4 +1,9 @@
-<%= render 'components/header', path: expense_types_path %>
+<div class="categories-header">
+    <%= render 'components/header', path: expense_types_path %>
+    <div class="row">
+        <h3 class="categories-text  mx-auto">Monthly Budgets</h3>
+    </div>
+</div>
 <div class="row mx-2">
     <% if @budgets.length.zero? %>
     <div class="no-expense-container mx-auto mt-5">
