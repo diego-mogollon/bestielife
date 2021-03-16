@@ -17,7 +17,7 @@ Chatroom.destroy_all
 puts "database is clean"
 
 puts 'Creating 15 user...'
-user_1 = User.create!(first_name: "test", last_name: "tester", email: "user@user.com", password: 111111, nickname: "test")
+user_1 = User.create!(first_name: "Diego", last_name: "tester", email: "diego@user.com", password: 111111, nickname: "test")
 user_2 = User.create!(first_name: "test2", last_name: "tester2", email: "user2@user.com", password: 222222, nickname: "test2")
 user_3 = User.create!(first_name: "test3", last_name: "tester3", email: "user3@user.com", password: 333333)
 user_4 = User.create!(first_name: "test4", last_name: "tester4", email: "user4@user.com", password: 444444)
