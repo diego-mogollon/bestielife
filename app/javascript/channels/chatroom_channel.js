@@ -11,6 +11,7 @@ const initChatroomCable = () => {
         messagesContainer.insertAdjacentHTML('beforeend', data)
         const messageContent = document.getElementById('message_content');
         messageContent.value = "";
+        window.scrollTo(0,document.body.scrollHeight);
       },
     });
   }
