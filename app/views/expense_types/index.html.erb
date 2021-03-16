@@ -1,18 +1,17 @@
 <div class="categories-header">
-<%= render 'components/header', path: root_path %>
-<h3 class="categories-text"">
-Expenses
+    <%= render 'components/header', path: root_path %>
+    <h3 class="categories-text">
+        Expenses
 </div>
 </h3>
-        <div class="expenses-main"
-        </div>
+<div class="expenses-main"></div>
 <% @expense_types.each do |expense_type| %>
-    <div class="row card my-2 shadow border flex-row mx-auto">
-        <div class="col-4">
-             <div class="expense-type-image p-2">
-                 <%= image_tag(expense_type.img) %>
-            </div>
+<div class="row card my-2 shadow border flex-row mx-auto">
+    <div class="col-4">
+        <div class="expense-type-image p-2">
+            <%= image_tag(expense_type.img) %>
         </div>
+    </div>
     <div class="col-8 pt-3">
         <div class="container">
             <div class="row">
@@ -20,9 +19,9 @@ Expenses
                     <h5 class="card-title"><%= expense_type.name %></h5>
                 </div>
                 <% if expense_type.budgets.sum(:amount) < expense_type.expenses.sum(:amount)%>
-                    <div class="col expense-type-alert-sm px-3 py-1">
-                        <span>You have overshot your expenses.</span>
-                    </div>
+                <div class="col expense-type-alert-sm px-3 py-1">
+                    <span>You have overshot your expenses.</span>
+                </div>
                 <% end %>
             </div>
             <div class="row">

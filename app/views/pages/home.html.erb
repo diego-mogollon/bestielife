@@ -1,75 +1,71 @@
-
 <nav class="navbar navbar-expand-lg ml-auto">
     <ul class="navbar-nav align-self-end">
         <li class="nav-item dropdown d-flex flex-column">
-            <a class="nav-link fas fa-bars ml-auto "href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+            <a class="nav-link fas fa-bars ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to 'Calendar', new_user_session_path,  class: "dropdown-links" %>
-                 <%= link_to 'Expenses', new_user_session_path,  class: "dropdown-links" %>
-                 <%= link_to 'Explore', new_user_session_path,  class: "dropdown-links" %>
-                 <%= link_to 'Photos', new_user_session_path,  class: "dropdown-links" %>
-                 <%= link_to 'Friends', new_user_session_path,  class: "dropdown-links" %>
-                <%= link_to 'Chatroom', new_user_session_path, class: "dropdown-links" %>
+                <%= link_to(new_user_session_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-calendar-alt mr-3"></i><span class="text-muted">Calendar</span>
+                <% end %>
+                <%= link_to(new_user_session_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-dollar-sign mr-3"></i><span class="text-muted">Expenses</span>
+                <% end %>
+                <%= link_to(new_user_session_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-map-marked-alt mr-3"></i><span class="text-muted">Explore</span>
+                <% end %>
+                <%= link_to(new_user_session_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-camera-retro mr-3"></i><span class="text-muted">Photos</span>
+                <% end %>
+                <%= link_to(new_user_session_path,  class: "dropdown-links py-2") do %>
+                <i class="fas fa-dog mr-3"></i><span class="text-muted">Friends</span>
+                <% end %>
+                <%= link_to(new_user_session_path,  class: "dropdown-links py-2") do %>
+                <i class="fas  fa-comments mr-3"></i><span class="text-muted">Chatroom</span>
+                <% end %>
             </div>
-
         </li>
     </ul>
 </nav>
-
-<!--
-<div class="header__home">
-    <div class="container m-3 ">
-        <div class="row">
-            <div class="col-2"><%= image_tag('paw-logo.svg', class: 'paw-logo') %></div>
-            <%= render 'components/hamburger-menu', dashboard: true %>
-        </div>
-    </div>
-  </div>
- -->
-
 <div class="container home-container">
-      <div class="bottom-left"> <h1> Bestie Life </h1>
+    <div class="bottom-left">
+        <h1> Bestie Life </h1>
         <p> Living their best life whilst you live yours</p>
-      <p class =  "button button-lg primary-green my-3"> <%= link_to "Sign Up", new_user_session_path %> <p>
-  </div>
+        <p class="button button-lg primary-green my-3"> <%= link_to "Sign Up", new_user_session_path %>
+        <p>
+    </div>
 </div>
 
 
 <section id="two">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">Manage Your Pet's Life</h2>
-                    <hr class="primary">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="margin-top-0 text-primary">Manage Your Pet's Life</h2>
+            <hr class="primary">
+        </div>
+    </div>
+    </div>
+    <div class="mid-container">
+        <div class="row features-container">
+            <div class="col-lg-4 col-md-4 text-center text-center__features">
+                <div class="feature">
+                    <div class="col-lg-4 col-md-4 image-center "><%= image_tag('dog-heart.png', class: 'dog-heart') %></div>
+                    <h6>Made For Them, Customised by You</h6>
+                    <p class="text-muted">Built by pet lovers for pets.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center text-center__features">
+                <div class="feature">
+                    <div class="col-lg-4 col-md-4 image-center"><%= image_tag('cloud-icon.png', class: 'cloud-icon') %></div>
+                    <h6>Their Life on the Cloud</h6>
+                    <p class="text-muted">One centralised location for events, budgeting, photos and much more.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 text-center text-center__features">
+                <div class="feature">
+                    <div class="col-lg-4 col-sm-4 text-center"><%= image_tag('dog-ball.png', class: 'dog-ball') %></div>
+                    <h6>One Stop Shop for all Their Needs</h6>
+                    <p class="text-muted"> Make sure they're living their best life, whilst you live yours.</p>
                 </div>
             </div>
         </div>
-        <div class="mid-container">
-            <div class="row features-container">
-                <div class="col-lg-4 col-md-4 text-center text-center__features">
-                    <div class="feature">
-                        <div class="col-lg-4 col-md-4 image-center "><%= image_tag('dog-heart.png', class: 'dog-heart') %></div>
-                        <h6>Made For Them, Customised by You</h6>
-                        <p class="text-muted">Built by pet lovers for pets.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center text-center__features">
-                    <div class="feature">
-                        <div class="col-lg-4 col-md-4 image-center"><%= image_tag('cloud-icon.png', class: 'cloud-icon') %></div>
-                        <h6>Their Life on the Cloud</h6>
-                        <p class="text-muted">One centralised location for events, budgeting, photos and much more.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4 text-center text-center__features">
-                    <div class="feature">
-                      <div class="col-lg-4 col-sm-4 text-center"><%= image_tag('dog-ball.png', class: 'dog-ball') %></div>
-
-                          <h6>One Stop Shop for all Their Needs</h6>
-                        <p class="text-muted"> Make sure they're living their best life, whilst you live yours.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
+    </div>
+</section>

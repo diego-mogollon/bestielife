@@ -4,13 +4,6 @@
     <%= image_tag('plus.svg') %>
 </div>
 <% end %>
-<% else %>
-<%= link_to path do %>
-<div class="button fab">
-    <%= image_tag('plus.svg') %>
-</div>
-<%end%>
-<% end %>
 
 <div class="container">
     <div class="modal fade" id="photoPreviewModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -33,3 +26,10 @@
         </div>
     </div>
 </div>
+<% else %>
+<%= link_to path do %>
+<div class="button fab">
+    <%= image_tag('plus.svg') %>
+</div>
+<%end%>
+<% end %>
