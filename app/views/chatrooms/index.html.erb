@@ -4,13 +4,15 @@
     Chatrooms
     </h3>
 </div>
-<div class="chatroom-main">
-    <div class="chatroom-body">
+<div class="cards">
         <% @chatrooms.each do |chatroom| %>
-        <div class="chatroom-card">
-            <h3><%= chatroom.name %></h3>
-            <%= link_to "Enter", chatroom_path(chatroom), class:'button button-sm primary-green'%>
-        </div>
+            <div class="card-category" style="background-image: <%= chatroom.img %>">
+                <div class="container chatroom-card-name">
+                    <h3><%= chatroom.name %></h3>
+                </div>
+                <div class="container chatroom-card-button">
+                    <%= link_to "Enter", chatroom_path(chatroom), class:'button button-sm primary-green'%>
+                </div> 
+            </div>
         <% end %>
-    </div>
 </div>
