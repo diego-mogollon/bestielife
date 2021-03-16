@@ -17,16 +17,16 @@ Chatroom.destroy_all
 puts "database is clean"
 
 puts 'Creating 15 user...'
-user_1 = User.create!(first_name: "Diego", last_name: "tester", email: "diego@user.com", password: 111111, nickname: "test")
-user_2 = User.create!(first_name: "test2", last_name: "tester2", email: "user2@user.com", password: 222222, nickname: "test2")
-user_3 = User.create!(first_name: "test3", last_name: "tester3", email: "user3@user.com", password: 333333)
-user_4 = User.create!(first_name: "test4", last_name: "tester4", email: "user4@user.com", password: 444444)
-user_5 = User.create!(first_name: "tes5", last_name: "tester5", email: "user5@user.com", password: 555555)
-user_6 = User.create!(first_name: "test6", last_name: "tester6", email: "user6@user.com", password: 666666)
-user_7 = User.create!(first_name: "test7", last_name: "tester7", email: "user7@user.com", password: 777777)
-user_8 = User.create!(first_name: "test8", last_name: "tester8", email: "user8@user.com", password: 888888)
-user_9 = User.create!(first_name: "test9", last_name: "tester9", email: "user9@user.com", password: 999999)
-user_10 = User.create!(first_name: "test10", last_name: "tester10", email: "user10@user.com", password: 101010)
+user_1 = User.create!(first_name: "Diego", last_name: "tester", email: "diego@user.com", password: 111111, nickname: "Sundae")
+user_2 = User.create!(first_name: "Cheena", last_name: "Elise", email: "cheena@user.com", password: 222222, nickname: "Yoshi")
+user_3 = User.create!(first_name: "test3", last_name: "tester3", email: "user3@user.com", password: 333333, nickname: "Chef")
+user_4 = User.create!(first_name: "test4", last_name: "tester4", email: "user4@user.com", password: 444444, nickname: "Chilli")
+user_5 = User.create!(first_name: "tes5", last_name: "tester5", email: "user5@user.com", password: 555555, nickname: "Azlan")
+user_6 = User.create!(first_name: "test6", last_name: "tester6", email: "user6@user.com", password: 666666, nickname: "Marmaduke")
+user_7 = User.create!(first_name: "test7", last_name: "tester7", email: "user7@user.com", password: 777777, nickname: "Snowy")
+user_8 = User.create!(first_name: "test8", last_name: "tester8", email: "user8@user.com", password: 888888, nickname: "Bonnie")
+user_9 = User.create!(first_name: "test9", last_name: "tester9", email: "user9@user.com", password: 999999, nickname: "Peter")
+user_10 = User.create!(first_name: "test10", last_name: "tester10", email: "user10@user.com", password: 101010, nickname: "Yoshi")
 
 puts "#{User.count} User created..."
 
@@ -57,7 +57,7 @@ pet_1.photos.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg')
 #^^pet profile images 9 x generic photos of silky terrier^^
 puts 'Creating pet 2...'
 
-pet_2 = Pet.create(pet_name: 'Yoshi', birthday: '07/07/1990', breed: "Boxer", microchip: "123456", user_id: user_2.id )
+pet_2 = Pet.create(pet_name: 'Yoshi', birthday: '20/05/19', breed: "Boxer", microchip: "123456", user_id: user_2.id)
 file = URI.open('https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
 pet_2.photos.attach(io: file, filename: 'photo1.jpg', content_type: 'image/jpg')
 file = URI.open('https://images.unsplash.com/photo-1594118319842-b72837a0ecea?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80')
@@ -82,7 +82,7 @@ pet_2.photos.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg')
 puts 'Creating pet 3 and on...'
 
 pet_3 = Pet.create(pet_name: 'Arlo', birthday: '18/05/2019', breed: "Border Collie", microchip: "123456", user_id: user_3.id )
-file = URI.open('https://images.unsplash.com/photo-1551097295-4c28e380cdf6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+file = URI.open('https://images.unsplash.com/photo-1551097295-4c28e380cdf6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
 pet_3.photos.attach(io: file, filename: 'photo3.jpg', content_type: 'image/jpg')
 
 pet_4 = Pet.create(pet_name: 'Chef', birthday: '07/07/1990', breed: "Husky", microchip: "123456", user_id: user_4.id )
@@ -105,7 +105,7 @@ pet_8 = Pet.create(pet_name: 'Snowy', birthday: '07/07/1990', breed: "Golden Ret
 file = URI.open('https://images.unsplash.com/photo-1581434293783-79abdca76f3d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTU4fHxkb2dzfGVufDB8MXwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=600')
 pet_8.photos.attach(io: file, filename: 'photo8.jpg', content_type: 'image/jpg')
 
-pet_9 = Pet.create(pet_name: 'Azlan', birthday: '07/07/1990', breed: "Bulldog", microchip: "123456", user_id: user_9.id )
+pet_9 = Pet.create(pet_name: 'Bonnie', birthday: '07/07/1990', breed: "Bulldog", microchip: "123456", user_id: user_9.id )
 file = URI.open('https://images.unsplash.com/photo-1601245381370-4056f3f47526?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80')
 pet_9.photos.attach(io: file, filename: 'photo9.jpg', content_type: 'image/jpg')
 
@@ -129,7 +129,7 @@ Event.create(pet_id: pet_1.id, name: "Training Session", description: "Outdoor T
 Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tasting, organic GF, DF, SF, NF, RSF, PALEO", start_time: "2021-03-7 08:00", end_time: "2021-03-07 08:30")
 
 puts "Creating Chatrooms"
-# CHATROOM SEED
+#CHATROOM SEED
 
 Chatroom.create(name: "General", img: 'chatroom-general.jpg')
 Chatroom.create!(name: "Food", img: 'chatroom-food.jpg')
