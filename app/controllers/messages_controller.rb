@@ -7,9 +7,10 @@ class MessagesController < ApplicationController
         
         if @message.save
             ChatroomChannel.broadcast_to(
-            @chatroom,
-            render_to_string(partial: "message", locals: { message: @message })
-            )
+        @chatroom,
+        partial: ApplicationController.render(partial: "messages/message", locals: { message: @message, user_is_messages_author: false }),
+        sender_id: current_user.id.to_s
+      )
         else
             render 'chatrooms/show'
         end
