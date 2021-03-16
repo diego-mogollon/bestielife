@@ -1,4 +1,4 @@
-<div class="row header pb-3">
+<div class="row header pb-3 border">
     <div class="container">
         <div class="row my-3">
             <%= render 'components/header', path: places_path, white_header: true %>
@@ -40,7 +40,11 @@
     </div>
 </div>
 <div class="row">
+    <% if @location.photo.nil? %>
+    <span class="text-muted text-center">No photo available</span>
+    <% else %>
     <%= image_tag(@location.photo, class: "cafe-image mx-auto w-75") %>
+    <% end %>
 </div>
 <div class="row my-3 mx-2">
     <div class="col ml-auto">
