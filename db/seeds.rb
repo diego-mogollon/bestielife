@@ -133,10 +133,21 @@ Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tastin
 puts "Creating Chatrooms"
 #CHATROOM SEED
 
-Chatroom.create(name: "General", img: 'chatroom-general.jpg')
-Chatroom.create!(name: "Food", img: 'chatroom-food.jpg')
-Chatroom.create!(name: "Health", img: 'chatroom-health.jpg')
-Chatroom.create!(name: "Explore", img: 'chatroom-explore.jpg')
+chatroom_general = Chatroom.create!(name: "General")
+file = URI.open('https://res.cloudinary.com/daj0b5j8l/image/upload/v1615882832/Bestielife/chatroom-general_ywt9k1.jpg')
+chatroom_general.photo.attach(io: file, filename: 'chatroom_general.jpg', content_type: 'image/jpg' )
+
+chatroom_food = Chatroom.create!(name: "Food")
+file = URI.open('https://res.cloudinary.com/daj0b5j8l/image/upload/v1615882833/Bestielife/chatroom-food_b5xvos.jpg')
+chatroom_food.photo.attach(io: file, filename: 'chatroom_food.jpg', content_type: 'image/jpg')
+
+chatroom_health = Chatroom.create!(name: "Health")
+file = URI.open('https://res.cloudinary.com/daj0b5j8l/image/upload/v1615882833/Bestielife/chatroom-health_z8wtmr.jpg')
+chatroom_health.photo.attach(io: file, filename: 'chatroom_health.jpg', content_type: 'image/jpg')
+
+chatroom_explore = Chatroom.create!(name: "Explore")
+file = URI.open('https://res.cloudinary.com/daj0b5j8l/image/upload/v1615882833/Bestielife/chatroom-explore_qxgsm5.jpg')
+chatroom_explore.photo.attach(io: file, filename: 'chatroom_explore.jpg', content_type: 'image/jpg')
 
 puts "Creating expense types"
 #EXPENSE_TYPE SEED
