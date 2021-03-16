@@ -131,10 +131,10 @@ Event.create(pet_id: pet_1.id, name: "Ziwi Deluxe Tasting", description: "Tastin
 puts "Creating Chatrooms"
 # CHATROOM SEED
 
-Chatroom.create(name: "General")
-Chatroom.create!(name: "Food")
-Chatroom.create!(name: "Health")
-Chatroom.create!(name: "Explore")
+Chatroom.create(name: "General", img: 'chatroom-general.jpg')
+Chatroom.create!(name: "Food", img: 'chatroom-food.jpg')
+Chatroom.create!(name: "Health", img: 'chatroom-health.jpg')
+Chatroom.create!(name: "Explore", img: 'chatroom-explore.jpg')
 
 puts "Creating expense types"
 #EXPENSE_TYPE SEED

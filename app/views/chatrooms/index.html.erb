@@ -6,7 +6,7 @@
 </div>
 <div class="cards">
         <% @chatrooms.each do |chatroom| %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+            <div class="card-category" style="background-image: <%= chatroom.img %>">
                 <div class="container chatroom-card-name">
                     <h3><%= chatroom.name %></h3>
                 </div>
