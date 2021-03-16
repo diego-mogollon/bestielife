@@ -1,4 +1,6 @@
-<%= render 'components/header', path: expense_type_budgets_path %>
+<div class="categories-header">
+    <%= render 'components/header', path: expense_type_budgets_path %>
+</div>
 <div class="row mx-auto flex-column">
     <div class="col my-3">
         <h5><%= budget.id ? "Update #{@expense_type.name} budget" : "Add a new #{@expense_type.name} budget"%></h5>
