@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .message-main {
-    margin: 0 auto;
+    margin: 1rem 1rem;
+    
     
     
 }
 
 .message-container{
     max-width: 90vw;
+    min-width: 80vw;
     margin: 0 auto;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -26,6 +28,7 @@
 
 .message-container-stranger{
     max-width: 90vw;
+    min-width: 80vw;
     float: right;
     margin: 0 auto;
     overflow-wrap: break-word;
@@ -41,3 +44,25 @@
     margin: 1rem auto;
     
 }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .message-container-stranger, .message-container {
+        width: fit-content;
+
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .message-container-stranger, .message-container {
+
+    }
+  }
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .message-container-stranger, .message-container {
+
+    }
+  }
