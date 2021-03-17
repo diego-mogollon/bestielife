@@ -2,34 +2,20 @@
     <div class="col-9 mx-auto">
         <div class="container">
             <div class="row mb-2 align-items-center event-card-header">
-                <% if !defined?(week_view) %>
                 <h6>Description of your event</h6>
-                <% else %>
-                <h6>Today's event</h6>
-                <% end %>
             </div>
             <div class="row">
                 <span class="text-muted">
-                    <% if !defined?(week_view) %>
                     <%= event.description%>
-                    <% end %>
                 </span>
             </div>
-            <% if defined?(week_view) %>
-            <div class="row">
-                <%= link_to "#{event.name[0..10]}...", event_path(event), class: "event-link" %>
-            </div>
-            <%end%>
         </div>
-
-        <% if !defined?(week_view) %>
         <div class="row">
             <div class="col-2 ml-auto d-flex">
                 <%= link_to image_tag('edit.svg', class: "icon edit mr-2"), edit_event_path(event) %>
                 <%= link_to image_tag('delete.svg', class: "icon delete"), event_path(event), method: :delete %>
             </div>
         </div>
-        <% end %>
     </div>
 </div>
 </div>
