@@ -1,8 +1,18 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.message-main {
+    margin: 0 auto;
+    
+    
+}
 
 .message-container{
+    max-width: 90vw;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
     background: $primary-blue;
     border-radius: 20px;
     display: inline-block;
@@ -10,11 +20,17 @@
     color: #fff;
     font-weight: lighter;
     box-shadow: 1px 1px 2px rgba(0,0,0,.3);
-    margin: 1rem;
-    position: relative;
+    margin: 1rem auto;
+    
 }
 
 .message-container-stranger{
+    max-width: 90vw;
+    float: right;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
     background: $primary-green;
     border-radius: 20px;
     display: inline-block;
@@ -22,6 +38,6 @@
     color: #fff;
     font-weight: lighter;
     box-shadow: 1px 1px 2px rgba(0,0,0,.3);
-    margin: 1rem;
-    position: relative;
+    margin: 1rem auto;
+    
 }
