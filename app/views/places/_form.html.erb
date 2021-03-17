@@ -3,11 +3,11 @@
         <%= form_with(model: place, local: true, data: {
         controller: :maps
     }) do |form| %>
-         <div class="field search">
+        <div class="field search">
             <%= form.label "Search for an area" %>
             <%= form.search_field :search, name: nil, data: {target: "maps.field", action: "keydown->maps#preventSubmit" }, class: "form-control" %>
         </div>
-        <div data-target="maps.map" class="map"></div>
+        <div data-maps-target="map" class="map"></div>
         <%end %>
-       </div>
+    </div>
 </div>
