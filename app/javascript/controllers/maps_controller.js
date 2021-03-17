@@ -45,9 +45,17 @@ export default class extends Controller {
 
     const infowindow = new google.maps.InfoWindow({
       content: `<div class="card shadow rounded px-5 py-3">
-                  <h6 class="mb-1">${place.name}</h6>
-                  <p>${place.formatted_address}</p>
-                  <button id="iw-button" class="button button-sm primary-green">View</button>
+                  <div class="row d-flex flex-column justify-content-between">
+                    <div class="col">
+                      <h6 class="mb-1">${place.name}</h6>
+                    </div>
+                    <div class="col">
+                      <p>${place.formatted_address}</p>
+                    </div>
+                    <div class="col">
+                      <button id="iw-button" class="button button-sm primary-green">View</button>
+                    </div>
+                  </div>
                 </div>`,
     });
 

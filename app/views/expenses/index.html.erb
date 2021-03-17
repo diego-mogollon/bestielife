@@ -14,19 +14,19 @@
         <div class="col mx-auto mt-3">
             <div class="container">
                 <div class="row mb-3">
-                    <div class="col-8">
+                    <div class="col-6">
                         <% if @expense_type.budgets.sum(:amount) < @expense_type.expenses.sum(:amount)%>
-                        <div class="col expense-type-alert-lg px-3 py-1 mt-2">
+                        <div class="col expense-type-alert-lg px-3 py-2 mt-2">
                             <span>You have overshot your expenses.</span>
                         </div>
                         <% end %>
                     </div>
-                    <div class="col-4 ml-auto">
+                    <div class="col-6 card shadow rounded ml-auto d-flex flex-column justify-content-center align-items-center px-3 py-2 mt-2">
                         <div class="row">
-                            <span class="text-muted mr-1">Actuals</span> - <span class="ml-1">$<%=@expense_type.expenses.sum(:amount)%></span>
+                            <span class="mr-1 expense-card-text">Actuals</span> - <span class="ml-1">$<%=@expense_type.expenses.sum(:amount)%></span>
                         </div>
                         <div class="row">
-                            <span class="text-muted mr-1">Budget</span> - <span class="ml-1">$<%=@expense_type.budgets.sum(:amount)%></span>
+                            <span class="mr-1 expense-card-text">Budget</span> - <span class="ml-1">$<%=@expense_type.budgets.sum(:amount)%></span>
                         </div>
                     </div>
                 </div>
