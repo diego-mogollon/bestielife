@@ -44,7 +44,7 @@ export default class extends Controller {
     markers = [...markers, marker];
 
     const infowindow = new google.maps.InfoWindow({
-      content: `<div class="card shadow rounded px-5 py-3">
+      content: `<div class="shadow px-5 py-3">
                   <div class="row d-flex flex-column justify-content-between">
                     <div class="col">
                       <h6 class="mb-1">${place.name}</h6>

@@ -1,17 +1,17 @@
-<div class="row header">
-    <div class="container">
-        <div class="row">
-            <%= render 'components/header', path: events_path, white_header: true %>
+<div class="categories-header blue">
+    <%= render 'components/header', path: events_path %>
+    <div class="row">
+        <div class="col-2 mx-auto">
+            <%= image_tag('time.svg', class: 'logo time-logo') %>
         </div>
-        <div class="row">
-            <div class="col-4 d-flex flex-column mx-auto justify-content-around p-3">
-                <%= image_tag('time.svg', class: 'logo time-logo mx-auto') %>
-                <% if @event.start_time.strftime('%d %b %y') == @event.end_time.strftime('%d %b %y')%>
-                <h5 class="pt-3"><%= @event.start_time.strftime('%d %b %y')%></h5>
-                <% else %>
-                <h5 class="pt-3"><%= @event.start_time.strftime('%d %b %y')%> - <%= @event.end_time.strftime('%d %b %y') %></h5>
-                <% end %>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col mx-auto text-center">
+            <% if @event.start_time.strftime('%d %b %y') == @event.end_time.strftime('%d %b %y')%>
+            <h5 class="pt-3"><%= @event.start_time.strftime('%d %b %y')%></h5>
+            <% else %>
+            <h5 class="pt-3"><%= @event.start_time.strftime('%d %b %y')%> - <%= @event.end_time.strftime('%d %b %y') %></h5>
+            <% end %>
         </div>
     </div>
 </div>
