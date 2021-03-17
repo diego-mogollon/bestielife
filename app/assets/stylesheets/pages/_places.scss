@@ -1,7 +1,7 @@
 // Place all the styles related to the places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.places-main { 
+.places-main {
   margin: 0 auto;
   width: 90%;
 }
@@ -54,4 +54,5 @@
 }
 .cafe-image {
   border-radius: $font-size-base * 2;
+  width: 80%;
 }

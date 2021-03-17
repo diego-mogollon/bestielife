@@ -10,7 +10,6 @@
 import { Controller } from 'stimulus';
 //Contains markers for pet friendly places
 let markers = [];
-let placeIdArray = [];
 
 export default class extends Controller {
   // DOM elements linked to this controller
@@ -24,14 +23,22 @@ export default class extends Controller {
   }
 
   addMarkers(place, map, cb = () => {}) {
+    // const icon = {
+    //   url: place.icon,
+    //   size: new google.maps.Size(71, 71),
+    //   origin: new google.maps.Point(0, 0),
+    //   anchor: new google.maps.Point(15, 34),
+    //   scaledSize: new google.maps.Size(25, 25),
+    // };
+
     let marker = new google.maps.Marker({
-      map,
-      position: {
-        lat: place.geometry.location.lat(),
-        lng: place.geometry.location.lng(),
-      },
+      // icon,
+      position: place.geometry.location,
+      animation: google.maps.Animation.DROP,
+      title: place.name,
     });
 
+    marker.setMap(map);
     marker.setVisible(true);
 
     markers = [...markers, marker];
@@ -84,17 +91,9 @@ export default class extends Controller {
 
   onPlaceChange() {
     let place = this.autocomplete.getPlace();
-
     if (!place.geometry) {
       window.alert(`No details available for input: ${place.name}`);
       return;
-    }
-
-    if (place.geometry.viewport) {
-      this.map.fitBounds(place.geometry.viewport);
-    } else {
-      this.map.setCenter(place.geometry.location);
-      this.map.setZoom(17);
     }
 
     this.getPetFriendlyCafes(
@@ -112,13 +111,24 @@ export default class extends Controller {
       type: 'cafe',
     };
 
-    markers = [];
+    markers.forEach((marker) => {
+      marker.setMap(null);
+    });
+
     const service = new google.maps.places.PlacesService(map);
+    const bounds = new google.maps.LatLngBounds();
 
     service.textSearch(request, (places, status) => {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         places.slice(0, 5).forEach((place) => {
-          this.addMarkers(place, map);
+          if (place.geometry.viewport) {
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+
+          map.fitBounds(bounds);
+          map.setZoom(13);
           this.addMarkers(place, map, () => {
             fetch(`/places/check_place/${place.place_id}`)
               .then((response) => response.json())
@@ -138,8 +148,8 @@ export default class extends Controller {
                         rating: place.rating,
                         photo: place.photos
                           ? place.photos[0].getUrl({
-                              maxWidth: 100,
-                              maxHeight: 100,
+                              maxWidth: place.photos[0].width,
+                              maxHeight: place.photos[0].height,
                             })
                           : '',
                         google_place_id: place.place_id,
@@ -153,7 +163,6 @@ export default class extends Controller {
                       })
                         .then((response) => response.json())
                         .then((place_details) => {
-                          console.log(place_details);
                           if (place_details) {
                             window.location.href = `/places/${place_details.google_place_id}`;
                           } else {
@@ -182,52 +191,11 @@ export default class extends Controller {
   initializeMap() {
     this.map = new google.maps.Map(this.mapTarget, {
       center: new google.maps.LatLng(-37.840935, 144.946457),
-      zoom: 12,
+      zoom: 13,
+      clickableIcons: false,
     });
 
     this.getPetFriendlyCafes(-37.840935, 144.946457, this.map);
     this.enableAddressAutocomplete(this.map);
   }
-}
-
-function place() {
-  service.getDetails(request, (place, status) => {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      console.log(place);
-      let data = {
-        address: place.formatted_address,
-        name: place.name,
-        phone: place.formatted_phone_number,
-        website: place.website,
-        rating: place.rating,
-        photo: place.photos
-          ? place.photos[0].getUrl({
-              maxWidth: 450,
-              maxHeight: 450,
-            })
-          : '',
-        google_place_id: place.place_id,
-      };
-
-      fetch('/places/add_place', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-        .then((response) => response.json())
-        .then((place_details) => {
-          console.log(place_details);
-          if (place_details) {
-            window.location.href = `/places/${place_details.google_place_id}`;
-          } else {
-            console.log('no place details');
-          }
-        })
-        .catch((err) => console.log(err));
-    } else {
-      window.alert('Google maps did not return details for the place');
-    }
-  });
 }
