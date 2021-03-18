@@ -2,7 +2,6 @@ class EventsController < ApplicationController
     before_action :find_event, only: [:show, :edit, :update, :destroy]
 
     def index
-        flash[:notice] = "Scroll right to see full table"
         @events = Event.all
         if params[:start_date]
             @weekly_events = Event.where(start_time: params[:start_date].to_date.beginning_of_week..params[:start_date].to_date.end_of_week)
