@@ -70,7 +70,7 @@
     <div class="section friends-find">
         <div class="find-friends-card">
             <h4> Find Friends </h4>
-                <p><% Pet.all.each do |pet| %></p>
+                <% Pet.all.each do |pet| %>
                     <% if !current_user.pending_friends.include?(pet.user) && pet.pet_name != current_user.pet.pet_name && !current_user.friends.include?(pet.user) && pet.photos.any? %>
                     <div class="profile-pic">
                         <%= image_tag(pet.photos.first, class: 'avatar rounded-circle') %>
