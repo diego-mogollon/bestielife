@@ -5,11 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   validates :first_name, :last_name, presence: true
   has_one :pet, dependent: :destroy
-<<<<<<< HEAD
-  has_one :favourite_place
-=======
   has_one :favourite_place, dependent: :destroy
->>>>>>> a6ced7e4fde5a3115cb667214c5a658fe2e40f42
   has_many :messages, dependent: :destroy
   has_friendship
 
