@@ -2,7 +2,8 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 require "open-uri"
 puts "cleaning up database"
-# Item.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 Pet.destroy_all
 DashboardCategory.destroy_all
@@ -11,7 +12,7 @@ Expense.destroy_all
 Place.destroy_all
 FavouritePlace.destroy_all
 Event.destroy_all
-Chatroom.destroy_all
+
 
 # Category.destroy_all
 puts "database is clean"
