@@ -17,6 +17,28 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initChatroomCable();
   previewImageOnFileSelect();
+  (function detectMob() {
+    const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i,
+    ];
+
+    if (
+      toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+      })
+    ) {
+      const p = document.createElement('p');
+      p.innerText = 'Scroll to the left to view table';
+      p.classList.add('font-italic');
+      document.getElementById('calendar-main').append(p);
+    }
+  })();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference

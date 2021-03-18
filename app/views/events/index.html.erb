@@ -4,7 +4,7 @@
         <h3 class="categories-text  mx-auto">Calendar</h3>
     </div>
 </div>
-<div class="calendar-main">
+<div id="calendar-main">
     <% if params[:month] %>
     <%= render "month", events: @monthly_events %>
     <% else %>
