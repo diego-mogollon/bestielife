@@ -54,7 +54,12 @@
 }
 .cafe-image {
   border-radius: $font-size-base * 2;
-  width: 90vw;
-  margin: auto;
+  overflow: hidden;
+  width: 445px;
+  height: 246px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
   
 }
