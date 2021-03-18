@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   has_one :pet, dependent: :destroy
   has_one :favourite_place
-  has_many :chatrooms, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_friendship
 
