@@ -3,7 +3,8 @@
     <h3 class="categories-text"">
     <%=@user.pet.pet_name %>'s Besties
     </h3>
-</div>  
+</div>
+  
 <div class="friends-main">
     <div class="section friends-management">
         <div class="friends-card">
@@ -78,11 +79,13 @@
                     <div>
                     <%= pet.pet_name %>
                     </div>
+                    <div>
                         <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: pet.user.id}) do %>
-                        <input class='button button-md primary-green' type=submit value='Request'>
+                        <input class='button button-md primary-green' type='submit' value='Request'>
                         <% end %>
-                    <% end %>
-                <% end %>
+                    </div>
+                <% end %> 
+                <% end %> 
         </div>
     </div>
 </div>
