@@ -138,7 +138,7 @@ file = URI.open('https://res.cloudinary.com/daj0b5j8l/image/upload/v1615882832/B
 chatroom_general.photo.attach(io: file, filename: 'chatroom_general.jpg', content_type: 'image/jpg' )
 
 chatroom_food = Chatroom.create!(name: "Food")
-file = URI.open('https://res.cloudinary.com/daj0b5j8l/image/upload/v1615882833/Bestielife/chatroom-food_b5xvos.jpg')
+file = URI.open('https://res.cloudinary.com/daj0b5j8l/image/upload/v1616055862/karsten-winegeart-tIWBJN8t7zE-unsplash_tmqwg3.jpg')
 chatroom_food.photo.attach(io: file, filename: 'chatroom_food.jpg', content_type: 'image/jpg')
 
 chatroom_health = Chatroom.create!(name: "Health")
