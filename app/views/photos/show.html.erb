@@ -1,19 +1,19 @@
 <div class="categories-header photos-show-header">
     <%= render 'components/header', path: pet_path(@pet) %>
     <div class="profile-header">
-    <div class="profile-text">
-    <h3><%= @pet.pet_name %></h3>
-    </div>
+        <div class="profile-text">
+            <h3><%= @pet.pet_name %></h3>
+        </div>
     </div>
 </div>
 <div class="container d-flex flex-wrap justify-content-around">
     <div class="card d-flex flex-wrap justify-content-around">
         <%= cl_image_tag @photo.key, width: 340 %>
-        
-    <div class="photo-show-info"> 
-        <% if current_user == @pet.user %>
+
+        <div class="photo-show-info">
+            <% if current_user == @pet.user %>
             <%= link_to "x", remove_picture_pet_path(@photo.id), method: :delete, data: { confirm: " 🗑️ Delete this picture?" } %>
-        <% end %>
+            <% end %>
         </div>
     </div>
 </div>
