@@ -3,7 +3,7 @@
         <li class="nav-item dropdown d-flex flex-column">
             <a class="nav-link fas fa-bars ml-auto <%= dashboard ? '' : 'page-header' %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <% if !dashboard %>
+                <% if !dashboard && current_user%>
                 <%= link_to(root_path,  class: "dropdown-links py-2") do %>
                 <div class="row">
                     <div class="col-3">
@@ -75,8 +75,18 @@
                 </div>
                 <% end %>
                 <% end %>
-                 <%= link_to(about_path,  class: "dropdown-links py-2") do %>
-                <i class="fas  fa-comments mr-3"></i><span class="text-muted">About</span>
+                <% if !dashboard && current_user %>
+                <hr />
+                <%end %>
+                <%= link_to(about_path,  class: "dropdown-links py-2") do %>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas  fa-paw mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">About</span>
+                    </div>
+                </div>
                 <% end %>
                 <%= link_to(destroy_user_session_path,  method: :delete, class: "dropdown-links py-2") do %>
                 <div class="row">
