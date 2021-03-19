@@ -23,7 +23,7 @@
         </div>
 
     </div>
-    <div class="row align-items-center">
+    <div class="row align-items-center mx-2">
         <div class="dashboard d-flex flex-wrap justify-content-around">
             <% @dashboard_categories.each do |category| %>
             <%= render 'components/dashboard-card', category_title: category.name, category_url: category.url %>
