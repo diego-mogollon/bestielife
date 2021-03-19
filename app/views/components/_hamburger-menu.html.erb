@@ -75,6 +75,9 @@
                 </div>
                 <% end %>
                 <% end %>
+                 <%= link_to(about_path,  class: "dropdown-links py-2") do %>
+                <i class="fas  fa-comments mr-3"></i><span class="text-muted">About</span>
+                <% end %>
                 <%= link_to(destroy_user_session_path,  method: :delete, class: "dropdown-links py-2") do %>
                 <div class="row">
                     <div class="col-3">

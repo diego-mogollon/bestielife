@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
   root to: 'pages#home'
 
-  resources :pets, only: [:new, :create, :show] do 
+  get '/pages/about', to: 'pages#about', as: 'about'
+
+  resources :pets, only: [:new, :create, :show] do
     member do
       post :add_picture
       delete :remove_picture
@@ -24,21 +26,21 @@ Rails.application.routes.draw do
   resources :events
 
   #EXPENSES ROUTES
-  # resources :expenses do  
+  # resources :expenses do
   #  resources :expense_types
   # end
 
-  # resources :budgets do  
+  # resources :budgets do
   #   resources :expense_types
   # end
 
-  resources :expense_types do  
+  resources :expense_types do
     resources :expenses, except: [:show]
     resources :budgets
   end
- 
+
   # EXPLORE ROUTES
- 
+
   # resources :places, only: [:new] do
   #   resources :favourite_places, except: [:edit, :update]
   # end
@@ -49,12 +51,12 @@ Rails.application.routes.draw do
 
   resources :favourite_places, only: [:index, :destroy]
   get '/favourite_places/:id', to: 'favourite_places#add', as: 'add_to_favourites'
-  
+
   #PHOTOS ROUTES
   resources :photos, only: [:show, :index, :new]
 
   #CHATROOM ROUTES
-  resources :chatrooms, only: [:show, :index] do 
+  resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
   end
 end
