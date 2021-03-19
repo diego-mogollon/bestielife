@@ -14,12 +14,16 @@
 @import 'components/index';
 @import 'pages/index';
 
+html a:hover,
+li a {
+  text-decoration: none !important;
+}
+
 body {
   background-color: $white;
   padding: 0;
   margin: 0;
-}
-
-a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }

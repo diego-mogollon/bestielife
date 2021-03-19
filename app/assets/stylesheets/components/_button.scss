@@ -44,26 +44,26 @@
     }
   }
 }
-  .recieved-requests-btn {
-    position: relative;
-    display: flex;
-    margin: 1rem auto;
-    &.friends-yes-btn{
-      margin: auto;
-    }
-    &.friends-no-btn{
-      margin-bottom: 1.5rem;
-    }
+.recieved-requests-btn {
+  position: relative;
+  display: flex;
+  margin: 1rem auto;
+  &.friends-yes-btn {
+    margin: auto;
   }
+  &.friends-no-btn {
+    margin-bottom: 1.5rem;
+  }
+}
 
-  .upload-photo {
-    border: 1px solid #d3d3d3;
-    padding: 16px 24px;
-    cursor: pointer;
-    font-weight: 500;
-    background: white;
-    border-radius: 10px;
-    &.submit {
-      color: $primary-green
-    }
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 10px;
+  &.submit {
+    color: $primary-green;
   }
+}
