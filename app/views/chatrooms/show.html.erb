@@ -1,18 +1,18 @@
 <div class="categories-header">
     <%= render 'components/header', path: chatrooms_path %>
-    <h3 class="categories-text">
-    <h1>#<%= @chatroom.name %></h1>
-    </h3>
+    <div class="row">
+        <h3 class="categories-text mx-auto">#<%= @chatroom.name %></h3>
+    </div>
 </div>
-<div class= "col-sm-6">
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id%>">
-    <% @chatroom.messages.each do |message| %>
-      <%= render 'messages/message', user_is_messages_author: ( current_user == message.user), message: message %>
-    <% end %>
-  </div>
-  <div class="messages-main">
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-  <% end %>
-  </div>
+<div class="col-sm-6">
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id%>">
+        <% @chatroom.messages.each do |message| %>
+        <%= render 'messages/message', user_is_messages_author: ( current_user == message.user), message: message %>
+        <% end %>
+    </div>
+    <div class="messages-main">
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+        <% end %>
+    </div>
 </div>
