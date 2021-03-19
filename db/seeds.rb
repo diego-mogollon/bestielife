@@ -20,14 +20,14 @@ puts "database is clean"
 puts 'Creating 15 user...'
 user_1 = User.create!(first_name: "Diego", last_name: "tester", email: "diego@user.com", password: 111111, nickname: "Sundae")
 user_2 = User.create!(first_name: "Cheena", last_name: "Elise", email: "cheena@user.com", password: 222222, nickname: "Yoshi")
-user_3 = User.create!(first_name: "test3", last_name: "tester3", email: "user3@user.com", password: 333333, nickname: "Chef")
-user_4 = User.create!(first_name: "test4", last_name: "tester4", email: "user4@user.com", password: 444444, nickname: "Chilli")
-user_5 = User.create!(first_name: "tes5", last_name: "tester5", email: "user5@user.com", password: 555555, nickname: "Azlan")
-user_6 = User.create!(first_name: "test6", last_name: "tester6", email: "user6@user.com", password: 666666, nickname: "Marmaduke")
-user_7 = User.create!(first_name: "test7", last_name: "tester7", email: "user7@user.com", password: 777777, nickname: "Snowy")
-user_8 = User.create!(first_name: "test8", last_name: "tester8", email: "user8@user.com", password: 888888, nickname: "Bonnie")
-user_9 = User.create!(first_name: "test9", last_name: "tester9", email: "user9@user.com", password: 999999, nickname: "Peter")
-user_10 = User.create!(first_name: "test10", last_name: "tester10", email: "user10@user.com", password: 101010, nickname: "Yoshi")
+user_3 = User.create!(first_name: "Aparna", last_name: "tester3", email: "user3@user.com", password: 333333, nickname: "Chef")
+user_4 = User.create!(first_name: "Paal", last_name: "tester4", email: "user4@user.com", password: 444444, nickname: "Chilli")
+user_5 = User.create!(first_name: "Glenn", last_name: "tester5", email: "user5@user.com", password: 555555, nickname: "Azlan")
+user_6 = User.create!(first_name: "Aya", last_name: "tester6", email: "user6@user.com", password: 666666, nickname: "Marmaduke")
+user_7 = User.create!(first_name: "Ray", last_name: "tester7", email: "user7@user.com", password: 777777, nickname: "Snowy")
+user_8 = User.create!(first_name: "Christine", last_name: "tester8", email: "user8@user.com", password: 888888, nickname: "Bonnie")
+user_9 = User.create!(first_name: "Manon", last_name: "tester9", email: "user9@user.com", password: 999999, nickname: "Peter")
+user_10 = User.create!(first_name: "Kathy", last_name: "tester10", email: "user10@user.com", password: 101010, nickname: "Yoshi")
 
 puts "#{User.count} User created..."
 
