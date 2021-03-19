@@ -4,34 +4,90 @@
             <a class="nav-link fas fa-bars ml-auto <%= dashboard ? '' : 'page-header' %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <% if !dashboard %>
+                <%= link_to(root_path,  class: "dropdown-links py-2") do %>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-home mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Home</span>
+                    </div>
+                </div>
+                <% end %>
                 <%= link_to(events_path,  class: "dropdown-links py-2") do %>
-                <i class="fas fa-calendar-alt mr-3"></i><span class="text-muted">Calendar</span>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-calendar-alt mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Calendar</span>
+                    </div>
+                </div>
                 <% end %>
                 <%= link_to(expense_types_path,  class: "dropdown-links py-2") do %>
-                <i class="fas fa-dollar-sign mr-3"></i><span class="text-muted">Expenses</span>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-dollar-sign mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Expenses</span>
+                    </div>
+                </div>
                 <% end %>
                 <%= link_to(places_path,  class: "dropdown-links py-2") do %>
-                <i class="fas fa-map-marked-alt mr-3"></i><span class="text-muted">Explore</span>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-map-marked-alt mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Explore</span>
+                    </div>
+                </div>
                 <% end %>
                 <%= link_to(pet_path(current_user.pet),  class: "dropdown-links py-2") do %>
-                <i class="fas fa-camera-retro mr-3"></i><span class="text-muted">Photos</span>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-camera-retro mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Photos</span>
+                    </div>
+                </div>
                 <% end %>
                 <%= link_to(friends_path,  class: "dropdown-links py-2") do %>
-                <i class="fas fa-dog mr-3"></i><span class="text-muted">Friends</span>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-dog mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Friends</span>
+                    </div>
+                </div>
                 <% end %>
                 <%= link_to(chatrooms_path,  class: "dropdown-links py-2") do %>
-                <i class="fas  fa-comments mr-3"></i><span class="text-muted">Chatroom</span><% end %>
-                    <%= link_to(about_path,  class: "dropdown-links py-2") do %>
-                <i class="fas  fa-comments mr-3"></i><span class="text-muted">About</span>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas  fa-comments mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Chatroom</span>
+                    </div>
+                </div>
                 <% end %>
                 <% end %>
                  <%= link_to(about_path,  class: "dropdown-links py-2") do %>
                 <i class="fas  fa-comments mr-3"></i><span class="text-muted">About</span>
                 <% end %>
                 <%= link_to(destroy_user_session_path,  method: :delete, class: "dropdown-links py-2") do %>
-                <i class="fas fa-sign-out-alt mr-3"></i><span class="text-muted">Logout</span>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                    </div>
+                    <div class="col-9">
+                        <span class="text-muted">Logout</span>
+                    </div>
+                </div>
                 <% end %>
-
             </div>
         </li>
     </ul>
