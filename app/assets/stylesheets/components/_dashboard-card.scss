@@ -39,11 +39,11 @@
   }
 }
 
-
 .dashboard-card {
   border-radius: $font-size-base;
   width: $font-size-base * 8;
   height: $font-size-base * 8;
+  margin-bottom: $font-size-base;
 }
 .dashboard-card-image {
   height: 50%;
