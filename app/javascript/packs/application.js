@@ -36,7 +36,9 @@ document.addEventListener('turbolinks:load', () => {
       const p = document.createElement('p');
       p.innerText = 'Scroll to the left to view table';
       p.classList.add('font-italic');
-      document.getElementById('calendar-main').append(p);
+      if (document.getElementById('calendar-main')) {
+        document.getElementById('calendar-main').append(p);
+      }
     }
   })();
 });
